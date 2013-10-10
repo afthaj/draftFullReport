@@ -9,7 +9,7 @@ support systems : issues and challenges, Oxford, New York, 1990.
 
 31
 D. J. Power, A Brief History of Decision Support System, May 2003. [Online].
-Available: http://www.DSSResources.COM
+Available: http://www.dssresources.com
 
 vehicle scheduling
 

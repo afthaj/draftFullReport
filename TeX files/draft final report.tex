@@ -14,16 +14,17 @@
 \usepackage[authoryear, round]{natbib}
 \usepackage[table]{xcolor}
 \usepackage{color, colortbl}
+%\usepackage{hyperref}
+
 
 \title{
-Improving the Service of
-\\ the Private Bus Passenger Transportation System
-\\ in the Western Province
-\\ through an Efficient Bus Scheduling Strategy
+A Decision Support System
+\\ for Public Transportation
+\\ in Developing Countries
 }
 
 \author{Aftha Jaldin}
-\date{2nd of June 2013}
+\date{11th of October 2013}
 
 \begin{document}
 \maketitle
@@ -39,6 +40,8 @@ Improving the Service of
 \listoftables
 \newpage
 
+% begin Abstract
+
 \section*{Abstract}
 
 \paragraph{ } The Private Bus Passenger Transportation System is the most widely used Public Transportation System in Sri Lanka. It is used as the primary transport method for passengers within Colombo, the most populous city in the country, as well as between Colombo and other cities as well as suburbs.
@@ -50,6 +53,8 @@ The biggest problem that the commuters outline is the need to improve the servic
 Therefore, this research attempts to analyse the problems prevalent in the system and provide a bus scheduling solution to minimize/eliminate the existing problems associated with the inefficient bus service.
 
 \newpage
+
+% begin Acknowledgement
 
 \section*{Acknowledgement}
 I would like to take this opportunity to thank the following people who have helped me thus far in my final year research project.
@@ -63,25 +68,31 @@ I would like to take this opportunity to thank the following people who have hel
 \item Mr. K.A.R.A. Ranjith, the Operations Manager of the Western Province Passenger Transport Authority in providing information regarding the private bus service in the province.
 \item Prof. Amal Kumarage, a Senior Lecturer of the Department of Transport and Logistics Management at the University of Moratuwa.
 \item Mr. Janaka Weerawardana, doctoral student at the University of Moratuwa, Department of Transport and Logistics Management.
-\item My Parents for supporting me throughout the formulation of this report.
+\item Mr. Anuradha Piyadasa, a Consultant and an Academic in the field of Public Transportation and Management.
+\item Mr. Mahesh Nishan, Scheduling Officer at the Western Province Road Passenger Transport Authority.
+\item Mr. Theja Athukorala, Scheduling Officer at the Western Province Road Passenger Transport Authority.
+\item To all the people who participated in the User Survey and helped me in my research.
+\item and last, but certainly not least, my Parents for supporting me throughout the course of this research project.
 \end{itemize}
 
+
+
+% begin Chapter Introduction
 
 \chapter{Introduction}
 \label{chapter-Introduction}
 
-\section{Motivation}
-\label{section-Motivation}
+\paragraph{ } The Private Bus Transportation System is a famously contentious topic in Sri Lanka. For the average commuter, complaining about the system is part and parcel of everyday life. As a commuter myself and having used public transportation extensively for more than a decade, I have wondered many a time about the reasons why the bus service is in this state and why people keep complaining about it so very vehemently. The constant complaints are justified, as the bus service is grossly inefficient and lack proper service quality. The inefficiency in the system leads to lost productivity and dissatisfaction by the commuters. Eventually, it is the country that suffers from the lack of an efficient public transportation system for the people.
 
-\paragraph{ } The Private Bus Transportation System is a famously contentious topic in Sri Lanka. For the average commuter, complaining about the system is part and parcel of everyday life. As a commuter myself and having used public transportation extensively for more than a decade, I have wondered many a time about the reasons why the bus service is in this state and why people keep complaining about it so very vehemently. The constant complaints are justified, as the bus service is grossly inefficient and lack proper service quality. The inefficiency in the system leads to lost productivity and dissatisfaction by the commuters. In the end it is the country that suffers from not having an efficient public transportation system for the people.
+The initial objective of my project was to pinpoint the existing problems and possibly provide an IT solution for them. During the course of the research and interviews with the numerous people responsible, it occurred to me that the system has a myriad of things wrong with it. 
 
-It is in this background that I was motivated to carry out a research regarding the Private Bus Service in the Western Province. The objective was to pinpoint the existing problems and possibly provide an IT solution for them. During the course of the research and interviews with the numerous people responsible, it occurred to me that the system has a myriad of things wrong with it. 
+Careful management was the only requirement to overcome some problems, while others required a restructuring of the system, and still others required just an implementation of a solution and regulation of the service properly. Further research was required to identify underlying causes and provide a holistic solution to the problems. As I was passionate about the problem, I was intent on conducting a research to find solutions.
 
-Careful management was the only requirement to overcome some problems, while others required a restructuring of the system, and still others required just an implementation of a solution and regulation of the service properly. Issues where research was required also existed. As I was passionate about the problem, I was intent on conducting a research to find solutions to the existing problems.
+It is in this background that my research into the usage of a Decision Support System to solve problems in the local Public Transportation System was carried out. I did not immediately arrive at this solution, but gradually understood that the problems and the requirements of the stakeholders demanded such a system. Consequently, I attempted to identify and abstract the system's key components so that the over-arching concept can be applied to similar transportation systems in other developing countries.
 
 \newpage
 
-\section{Background Study}
+\section{Background Study: The Case of the WP RPTA}
 \label{section-BackgroundStudy}
 
 \paragraph{ } Bus Passenger Transport is the highest and most widely used mode of public transport in Sri Lanka. The system is divided into Inter-Provincial and Intra-Provincial bus services. The service is operated by privately run (private buses) as well as state-run (SLTB) buses. The Sri Lanka Transport Board manages the SLTB buses and their jurisdiction is island wide regardless of the district or province. However, the organizational structure of private buses is different. All Inter-Provincial Private Buses are governed by the National Transport Commission (NTC) while the private bus services within each of Sri Lanka’s provinces are governed by the Passenger Transport Authorities of the respective provinces. Accordingly, the Western Province Road Passenger Transport Authority (WP RPTA) handles the governance of the Private Bus Passenger Transport System in the Western Province.
@@ -96,7 +107,7 @@ Within the bus transportation system, state-run bus services account for a 23\% 
 
 \begin {figure} [h!]
 \centering
-\includegraphics [scale=0.7] {totalMotorTransportPieChart}
+\includegraphics [scale=0.6] {totalMotorTransportPieChart}
 \caption [Total Motorized Passenger Transport in SL] {Detailed View of Total Motorized Passenger Transport in Sri Lanka. Source: \citep{MinistryofTransport2008}}
 \label {image-totalMotorTransportPieChart}
 \end {figure}
@@ -115,7 +126,7 @@ In contrast, the state run bus service has a governing body, the SLTB, but it ha
 
 According to World Bank statistics, Sri Lanka’s population currently stands at 20.869 million people \citep{WorldBank2013}. Being the most densely populated, the Western Province has a population of 5.8 million people \citep{DepartmentofCensusandStatistics2012}, which is 27.8\% of the total population. This means that more than a quarter of the people in Sri Lanka live and commute in the Western Province. Therefore, it is clearly evident that an improvement in the level of service is needed seeing as it affects more than a quarter of the country’s population.
 
-As mentioned earlier, there are around 7000 private buses servicing the Western Province. To put that into perspective, the SLTB only has a cadre of 4500 buses islandwide. This means that there are more private buses in the Western Province than there are SLTB buses in the entire country. This shows that it is a large transportation system that affects more than a quarter of the population in the country on a daily basis.
+As mentioned previously, there are around 7000 private buses servicing the Western Province. To put that into perspective, the SLTB only has a cadre of 4500 buses islandwide. This means that there are more private buses in the Western Province than there are SLTB buses in the entire country. This shows that it is a large transportation system that affects more than a quarter of the population in the country on a daily basis.
 
 Also of importance to note is that the number of complaints related to the Inter-Provincial Private Bus Service has doubled this year compared to last year. Chairman of the NTC is reported as saying that over 40 complaints are received per day and this number is increasing \citep{Wickremasekara2012}, \citep{Range2012}. This means that the current strategy of scheduling buses is clearly not working properly which is leading to increased commuter dissatisfaction and complaints.
 
@@ -147,7 +158,7 @@ There are several issues that commuters highlight consistently. These are listed
 	\item Operating without a valid driver's license, revenue license, and/or route permit
 	\end {enumerate}
 \end {enumerate}
-References: \citep{Wickremasekara2012}, \citep{Range2012}, comments by frequent commuters, data gathered through a survey.
+References: \citep{Wickremasekara2012, Range2012}, comments by frequent commuters, data gathered through a survey.
 
 \newpage
 
@@ -219,15 +230,24 @@ Also of note is how the revision process is handled. A revision to an existing s
 
 \newpage
 
-\section{Research Goals and Objectives}
+%
+
+\section{Decision Support Systems: an Introduction}
+\label{section-DSSIntro}
+
+
+
+\newpage
+
+\section{Research Goals \& Objectives}
 \label{section-ResearchGoalsAndObjectives}
 
 \paragraph{ } Of the problems mentioned in Section~\ref{section-ExistingProblems}, implementing a better bus schedule could solve the first 3. The problem of overcrowded buses could also logically be solved through implementing an effective and efficient timetable. Therefore, this research project will focus on finding a solution to these 4 issues as they are the main and most commonly brought up by the commuters.
 
 We can identify the main goal of the research project as the proposition of a new method of scheduling buses in the transport system so that the problems mentioned previously are addressed and minimized or eliminated. This would lead to a more efficient passenger transport service and will improve commuter satisfaction and productivity.
 
-\section{Project Scope}
-\label{section-ProjectScope}
+\section{Research Scope \& Limitations}
+\label{section-ResearchScope}
 
 \paragraph{ } The research will focus on improving the scheduling of buses so that it is made more efficient and reliable. The project will focus on the timetabling aspect of the problem of public transit scheduling, as opposed to network planning, vehicle and crew scheduling and rostering. The project will attempt to offer an effective timetabling methodology to address the prevalent issues.
 
@@ -248,14 +268,16 @@ Chapter 5 will discuss the results of the gathered data and its’ implications 
 
 \newpage
 
+% begin Chapter LiteratureReview
+
 \chapter {Literature Review}
 \label{chapter-LitReview}
 
-\paragraph{ } In the previous chapter, we analyzed the background and current state of the private bus service in the Western Province. The chapter also included a thorough explanation of the current bus scheduling process in the WP RPTA. A justification of the reasons for this research project was also provided in the chapter.  We shall now take a look at the theoretical aspects of bus scheduling and the literature involved with it.
+\paragraph{ } In the previous chapter, we discussed and analyzed the background and current state of the private bus service in the Western Province. An introduction to Decision Support Systems and how they relate to the transportation problem was also provided. The chapter also included a thorough explanation of the current bus scheduling process in the WP RPTA. We shall now take an in-depth look at the theoretical aspects of the planning process of public transportation, a more thorough analysis of Decision Support Systems and look into a few transportation systems in other countries.
 
-\section*{Bus Scheduling and Dispatching}
+\section{Planning Process of Public Transportation}
 
-\paragraph{ } The scheduling process of a public transport company generally comprises of 4 main steps, which are \textit{timetabling}, \textit{vehicle scheduling}, \textit{crew scheduling}, and \textit{crew rostering}. The transport mode could be a bus, tram, metro, train or airline. Figure~\ref{image-genericSchedulingProcess} illustrates the flow of the traditional scheduling process. It is carried out as is or the crew scheduling is carried out prior to the vehicle scheduling in certain instances. However, in recent times, the industry has begun adopting an integrated approach of carrying out the vehicle and crew scheduling together. This is also discussed later in the chapter \citep{Huisman2004}.
+\paragraph{ } The planning and scheduling process of a public transport company generally comprises of 4 main steps, which are \textit{timetabling}, \textit{vehicle scheduling}, \textit{crew scheduling}, and \textit{crew rostering}. The transport mode could be a bus, tram, metro, train or airline. Figure~\ref{image-genericSchedulingProcess} illustrates the flow of the traditional scheduling process. It is carried out as is or the crew scheduling is carried out prior to the vehicle scheduling in certain instances. However, in recent times, the industry has begun adopting an integrated approach of carrying out the vehicle and crew scheduling together. This is also discussed later in the chapter \citep{Huisman2004}.
 
 \begin {figure} [h!]
 \centering
@@ -268,7 +290,7 @@ Decisions about which routes or lines to operate and how frequently, are inputs 
 
 The second planning process is vehicle scheduling which consists of assigning vehicles to trips, resulting in a schedule for each vehicle. The vehicles, which are not in use for some time, are parked in a depot. A schedule for a vehicle is split into several vehicle blocks, where a new vehicle block starts at each departure from the depot. On such a block a sequence of tasks can be defined, where each task needs to be assigned to a working period for one crew (a duty) in the crew scheduling process. The feasibility of a duty is dependent on a set of collective agreements and labor rules that refer to sufficient rest time etcetera. Crew scheduling is short term crew planning (one day), i.e. assigning crew duties to tasks on each specific day, while the crew rostering process is long term crew planning (e.g. half a year) for constructing rosters from the crew duties.
 
-\section{Timetabling}
+\subsection{Timetabling}
 
 \paragraph{ } Timetabling is the process of determining how frequently buses must operate on routes based on passenger demand and the operational plan of the respective authority and generating corresponding start and end locations and times of trips, based on these frequencies. Furthermore travel times between various points in routes, lengths of routes are assumed to be known \citep{Huisman2004}.
 
@@ -294,7 +316,7 @@ Furthermore, \citet{Fu2003} presented a new transit operating strategy in which 
 
 Finally, \citet{Sun2008} studied the headway optimization and scheduling combination of Bus Rapid Transit (BRT) vehicles. A model was proposed to minimize passengers' travel costs and vehicles' operation cost, and constraints included passenger volume, time, and frequency. The scheduling combination was composed by Normal, Zone, and Express scheduling. The model was solved by a genetic algorithm of variable-length coding. The result of the numerical case showed that the optimization results can save 69.92\% of the cost. A sensitivity analysis that was carried out showed that, under higher traffic volume or lower speed, the travel cost can be reduced through reasonable scheduling combination. The method was, therefore, proven scientifically and is feasible. A similar scheduling method of using Normal, Zone and Express Scheduling could possibly be implemented in Sri Lanka.
 
-\section{Vehicle Scheduling}
+\subsection{Vehicle Scheduling}
 
 \paragraph{ } Vehicle scheduling is defined as the process of assigning vehicles, to a set of predetermined trips, with fixed starting and ending times, while minimizing capital and operational costs. According to \citet{Freling2003}, the main objective of this step in the Scheduling Process is keeping the operational and capital costs of vehicles to a minimum.
 
@@ -310,13 +332,13 @@ In the Multiple-Depot Vehicle Scheduling Problem (MDVSP), buses are dispatched f
 \item Some trips have to be assigned to vehicles from a certain subset of depots.
 \end {itemize}
 
-\section {Crew Scheduling}
+\subsection {Crew Scheduling}
 
 \paragraph{ } The next step in the traditional scheduling process is the Crew Scheduling.  The problem is defined as follows: “The Crew Scheduling Problem (CSP) deals with assigning tasks to duties such that each task is performed; each duty is feasible with respect to a set of working rules and the total costs of the duties are minimized”. 
 
 According to \citep{Huisman2004}, the only requirement with relation to the feasibility of a duty is its length or the working time in that duty, respectively. In most literature, the CSP is formulated as a set partitioning or covering problem and solved with a column generation approach.
 
-\section {Integrated Vehicle and Crew Scheduling}
+\subsection {Integrated Vehicle and Crew Scheduling}
 
 \paragraph{ } As mentioned previously in this chapter, the industry has begun using Integrated Vehicle and Crew Scheduling in recent times. This is due to logical as well as financial reasons. The airline industry uses this methodology as a crew has to be scheduled along with an airline trip for obvious reasons.
 
@@ -324,7 +346,7 @@ The Integrated Vehicle and Crew Scheduling Problem (Integrated VCSP or IVCSP) is
 
 The author provides a very comprehensive look into the problem and presents a methodology to solve integrations of both the SDVSP and the MDVSP. The Integrated VCSP is also discussed by \citet{Freling2000} and \citet{Wren1997}.
 
-\section {Crew Rostering}
+\subsection {Crew Rostering}
 
 The Crew Rostering Problem (CRP) aims at determining an optimal sequencing of a given set of duties into rosters satisfying operational constraints deriving from union contracts and company regulations. In the public bus transport industry, the roster is used to evenly distribute the workload among the crew \citep{Caprara1995}. Further studies were done by \citep{Kharraziha2003} and \citep{Tian2012}. The Integrated Crew Rostering Problem was examined in depth by \citep{Valdes2010} and \citep{Xie2012}.
 
@@ -332,54 +354,88 @@ This literature review looked at the different steps involved in the bus schedul
 
 \newpage
 
-\chapter{Research Methodology}
-\label{chapter-ResearchMethodology}
+\section{Decision Support Systems}
 
-\paragraph{ } In Chapter~\ref{chapter-LitReview} we discussed the theoretical basis of scheduling and the planning process of a public transport system. We also analyzed the current literature related to the various stages of the planning process (i.e.:timetabling, vehicle and crew scheduling and crew rostering). Furthermore, in Chapter~\ref{chapter-Introduction} we discussed the background of the present system and the problems associated with the current bus scheduling process as well as the bus transport system as a whole. This chapter will detail a methodology to dispatch buses so as to minimize/eliminate the mentioned shortfalls in the system.
+\paragraph{ } Decision Support Systems are defined as a set of related computer programs and the data required to assist with analysis and decision-making within an organization. They are purposely developed to improve decision making of non-structured management problems. Decision Support Systems utilize data, provide an easy-to-use interface, and allow for the decision maker’s own insights hence being interactive, flexible, and adaptable computer-based information systems \citep{Turban2005}. 
 
-\section{Proposed Bus Dispatching Methodology}
+Having said that, the term DSS in itself is difficult to define with academics and users differing in their opinion in terms of its preferred use. While academics have perceived DSS as a tool to support the decision making process, DSS users see DSS as a tool to facilitate organizational processes \citep{Keen1980}.
 
-\paragraph{ } The methodology proposed in this thesis builds on the work of \citet{Ceder2009} and a few others. The objective of the methodology is to find out a suitable dispatching method for buses in each of the 450+ routes in the Western Province Private Bus Transport Service. His work involved 3 procedures, where the first proposed to dispatch buses with even headways disregarding the passenger demand (a.k.a the Load Factor in the bus a.k.a the number of people on board the bus). The second procedure proposed a method to dispatch buses so that the passenger demand (Load Factor) is minimized at the stop where the passenger demand is highest (for example, if in a route with stops at A, B, C and passenger demand is at its peak at B, this procedure attempts to dispatch buses so that the Load Factor at B is minimized thereby improving the comfort levels of travelling commuters).
+\subsection{History of Decision Support Systems}
 
-The third procedure proposed a method of dispatching buses where the passenger demand at all the stops were controlled at a predefined value. This means the passenger loads are more evenly spread out among the buses thereby minimizing overcrowding and increasing commuter comfort levels immensely. The purpose of the procedure is to derive the bus timetable provided that in an average sense all buses will have even Loads (equal to the Desired Occupancy or d$_j$, where j is the time period under observation. for example: 1st hour: j=1, d$_1$=Desired Occupancy for 1st hour; 2nd hour: j=2, d$_2$=Desired Occupancy for 2nd hour etc.) at the Max Load stop of each bus. That is, for a given time period each bus may have a different Max Load point across the entire bus route with a different Observed Average Load. The objective set forth is to change the departure times such that all Observed Average Max Loads will be the same and equal to d$_j$ during all j. Certainly the adjustments in the timetable are not intended for highly frequent urban services where the headway is less than say, 10 minutes, or an hourly frequency of about 6 vehicles or more. Behind this procedure is the notion that passenger overcrowding situations (loads greater than d$_j$) should be avoided.
+\paragraph{ } The concept of a Decision Support System has been around since the 1950's but only recently has it increased in popularity and adoption in the industry. With the improvement in technology, the research into DSS's has also increased. The abstract concept of a system that aids in the decision-making process has its roots in the late 1950's and early 1960's through research done at the Carnegie Institute of Technology. This later grew into information systems research through work done at the Massachusettes Institute of Technology in the 1960's. DSS's started to become a research topic of its own in the mid-1970's with more and more research following through the mid to late 1980's \citep{Keen1980, Power2003}.
 
-The proposed proposed system would identify the stakeholders of the private bus service, take into account the factors that affect each of them and evaluate the factors according to several dispatching methods to identify which methodology best suits the route in question. In effect, the system would evaluate the feasibility of each methodology for each route and output the most feasible method. Please refer to Figure~\ref{image-feasibilityMatrix}.
+\citep{Power2003} lists 5 main categories of DSS's which are,
 
-\begin {figure} [h!]
-\centering
-\includegraphics[scale=0.6]{feasibilityMatrix}
-\caption [Feasibility Matrix] {Feasibility Matrix}
-\label {image-feasibilityMatrix}
-\end {figure}
+\begin {itemize}
+\item \textbf{Communication-driven DSS} is a type of DSS that emphasizes communications, collaboration and shared decision-making support. A simple bulletin board or threaded email is the most elementary level of functionality. The comp.groupware FAQ defines groupware as "software and hardware for shared interactive environments" intended to support and augment group activity. Groupware is a subset of a broader concept called Collaborative Computing. Communications-Driven DSS enable two or more people to communicate with each other, share information and co-ordinate their activities. Group Decision Support Systems or GDSS is a hybrid type of DSS that allows multiple users to work collaboratively in groupwork using various software tools. Examples of group support tools are: audio conferencing, bulletin boards and web-conferencing, document sharing, electronic mail, computer supported face-to-face meeting software, and interactive video.; 
+\item \textbf{Data-driven DSS} is a type of DSS that emphasizes access to and manipulation of a time-series of internal company data and sometimes external data. Simple file systems accessed by query and retrieval tools provide the most elementary level of functionality. Data warehouse systems that allow the manipulation of data by computerized tools tailored to a specific task and setting or by more general tools and operators provide additional functionality. Data-driven DSS with On-line Analytical Processing (OLAP) provides the highest level of functionality and decision support that is linked to analysis of large collections of historical data. Executive Information Systems (EIS) and Geographic Information Systems (GIS) are special purpose Data-Driven DSS.;
+\item \textbf{Document-driven DSS} is a relatively new field in Decision Support. A document driven DSS is focused on the retrieval and management of unstructured documents. Documents can take many forms, but can be broken down into three categories: Oral, written, and video. Examples of oral documents are conversations that are transcribed; video can be news clips, or television commercials; written documents can be written reports, catalogs, letters from customers, memos, and even e-mail.;
+\item \textbf{Knowledge-driven DSS} can suggest or recommend actions to managers. These DSS are person-computer systems with specialized problem-solving expertise. The "expertise" consists of knowledge about a particular domain, understanding of problems within that domain, and "skill" at solving some of these problems.;
+\item \textbf{Model-driven DSS} emphasize access to and manipulation of a model, for example, statistical, financial, optimization and/or simulation models. Simple statistical and analytical tools provide the most elementary level of functionality. Some OLAP systems that allow complex analysis of data may be classified as hybrid DSS systems providing both modeling and data retrieval and data summarization functionality. In general, model-driven DSS use complex financial, simulation, optimization or multi-criteria models to provide decision support. Model-driven DSS use data and parameters provided by decision makers to aid decision makers in analyzing a situation, but they are not usually data intensive, which means very large databases are usually not needed for a model-driven DSS.;
+\end {itemize}
 
-As in the Figure~\ref{image-feasibilityMatrix}, the suitable methodology will be the output for every route.
+\citep{Power2003} also identifies 4 main characteristics of DSS's namely,
+
+\begin {enumerate}
+\item Inputs - these are what is used by the DSS analysis.;
+\item User knowledge and expertise - this allows the system to decide how much it is relied on, and exactly what inputs must be analyzed with or without the user.;
+\item Outputs - this is used so that the user of the system can analyze the data and potentially make a decision based on the information presented.;
+\item Decision Making - this is the ultimate goal of the User who utilizes the DSS. The goal of the system is to aid the User in their decision-making process.;
+\end {enumerate}
 
 \newpage
 
-\chapter {Data Gathering and Analysis}
-\label{chapter-DataGatheringAndAnalysis}
+\section{Transportation Information Systems of cities in other Developing Countries}
 
-\section{Data Gathering Technique}
+\paragraph{} So far in this chapter, we took a look at the literature related to the planning process of a public transportation company. We also reviewed some literature behind Decision Support Systems. Next we'll take a look at some Transportation Information Systems of cities in other Developing Countries.
 
-\paragraph{ } In Chapter~\ref{chapter-DataGatheringAndAnalysis} we discussed the proposed bus dispatching methodology to solve the problems mentioned in Section~\ref{section-ExistingProblems}. This chapter will detail the Data Gathering procedure as well as some research into the problems related Data Gathering and the Private Bus Transport System in the Western Province (WP). It will also provide a sample of the data that was gathered during an initial pilot survey. The complete set of data that was gathered is listed in Appendix~\ref{appendix-CompleteSetOfData}.
+During this research, data regarding information systems related to transportation services of 4 Indian cities, namely Bangalore, Mumbai, Delhi and Chennai, as well as the transportation services in Uganda (mainly Kampala) and the public bus transport service of Buenos Aires in Argentina was uncovered. Sri Lanka, India, Argentina and Uganda are all listed as Developing Countries according to the latest International Statistical Institute data \citep{ISI2013}.
 
-The bus route chosen for the study is the 177 bus route that runs between Kolpetty and Kaduwela. The route segment between Kolpetty and Rajagiriya is taken into consideration when collecting the data. It is a high value route and is graded as "A+" in a scale of A+, A, B, C by the WP RPTA based on the passenger demand and importance of the route. Additionally, it has buses that are consistently overcrowded and commuters complain about it frequently. Buses on the route are also prone to loitering and many complaints are received regarding this issue making it a perfect candidate to test our hypothesis.
+Of the 4 Indian cities under consideration, Bangalore, Mumbai and Delhi had more modern Information Systems for their transport services. The Chennai system looked outdated and lacked proper maintenance. Common functionality that these 4 systems related to the indian cities provided was a Bus Route Finder (i.e.: when origin and destination stops are provided, the system provides the possible routes), Information Portal regarding Bus Routes and Bus Stops and information regarding hiring/renting a bus for private journeys. Furthermore, only the Bangalore and Chennai systems offered the functionality of commuter feedback \citep{BMTC1997, BEST1995, DTC2012, MTC2001}.
+
+In Argentina, the public bus transport system is known as the "Colectivos" and although there is no proper information system for the bus service, private travel organizations have information portals regarding the service. One such portal is that which is run by Omnilineas, a licensed travel agency in Buenos Aires with a special focus on incoming tourism and bus travel. Their system provides Bus Route Information as well as information regarding booking tickets for long-distance trips \citep{Omnilineas2013}.
+
+\newpage
+
+% begin Chapter ResearchMethodology
+
+\chapter{Research Methodology}
+\label{chapter-ResearchMethodology}
+
+\paragraph{ } In Chapter~\ref{chapter-LitReview} we discussed the theoretical basis of scheduling and the planning process of a public transport system. We also analyzed the current literature related to the various stages of the planning process (i.e.:timetabling, vehicle and crew scheduling and crew rostering). Furthermore, in Chapter~\ref{chapter-Introduction} we discussed the background of the present system and the problems associated with the current bus scheduling process as well as the bus transport system as a whole. This chapter will detail the research methodology that was followed during this research project.
+
+The main research objective was to find a solution to help all the stakeholders involved in the public transportation system. In order to do so, people in the scheduling process of the transport system as well authoritative persons in charge of regulating the service were interviewed. In particular, the NTC and the WP RPTA was contacted and several relevant people were interviewed to understand the system \& the service and to ascertain the current problems of the system. A list of persons interviewed have been noted below.
+
+\begin{itemize}
+\item Mr. Pradeep Fernando - Head of the GPS Tracking and Monitoring Unit, National Transport Commission.
+\item Mr. Dhanushka - Team Member, GPS Tracking and Monitoring Unit, National Transport Commission.
+\item Mr. Muditha Navaratne - Timetable Unit of the National Transport Commission.
+\item Mr. K.A.R.A. Ranjith - Operations Manager, Western Province Passenger Transport Authority.
+\item Mr. Mahesh Nishan - Scheduling Officer, Western Province Passenger Transport Authority.
+\item Mr. Theja Athukorala - Scheduling Officer, Western Province Passenger Transport Authority.
+\end{itemize}
+
+After the interviews were carried out, an idea of the transportation system and its issues began to emerge. It was then that a pilot Route Survey was conducted. Details of the Survey is mentioned in the following section.
+
+\section{Pilot Route Survey}
+
+\paragraph{ } The bus route chosen for the study is the 177 bus route that runs between Kolpetty and Kaduwela. The route segment between Kolpetty and Rajagiriya was taken into consideration when collecting the data. It is a high value route and is graded as "A+" in a scale of A+, A, B, C by the WP RPTA based on the passenger demand and importance of the route. Additionally, it has buses that are consistently overcrowded and commuters complain about it frequently. Buses on the route are also prone to loitering and many complaints are received regarding this issue making it a perfect candidate to carry out the pilot route survey.
 
 There are 49 buses in in the normal fleet in total with 35 in daily operation. All buses have the capacity to carry around 45 passengers (seated) on average. The route also has Air Conditioned (AC) buses but we will not be considering the AC buses in our data gathering.
 
-Data is collected by physically traveling in the bus at the required times and manually counting the number of passengers that get on and off the bus. This provides information about the passenger demand and load situations in the bus. The time at which the bus arrives and departs each bus stop is also observed and recorded. The time spent at each bus stop can be calculated using this data. If the bus loiters at a certain bus stop, the amount of time the driver spends loitering is also recorded.
+Data was collected by physically traveling in the bus at various times and manually counting the number of passengers that get on and off the bus. This provided information about the passenger demand and load situations in the bus. The time at which the bus arrives and departs each bus stop was also observed and recorded. The time spent at each bus stop was calculated using this data. If the bus loiters at a certain bus stop, the amount of time the driver spends loitering was also recorded.
 
-\section{Loitering} Loitering refers to the time the bus lingers at the bus stop waiting for more passengers after the first group of passengers have alighted and boarded the bus. The time taken for commuters to get on and off the bus is not considered under the Loiter Time. A common complaint by commuters is that buses, after dropping off the passengers and allowing more to get in, idle at the bus stop usually until the next bus arrives. This leads to the people who are already in the bus waiting idly at the bus stop in a crowded bus senselessly. This action also picks up the passengers that are supposed to go in the later bus which leads to the later bus not having enough passengers to cover their costs and thereby they too loiter at the bus stop. This occurs continuously and in the end the commuters are kept waiting in the bus at the bus stand for no reason. Loitering is a major issue with the Private Bus Service and frequent complaints are made by commuters regarding it. It is detrimental to the proper dispatching of buses as it delays the commuters and makes it difficult for the schedulers to draw up correct timetables.
+\section{Loitering} Loitering refers to the time the bus lingers at the bus stop waiting for more passengers after the initial group of passengers have alighted and boarded the bus. The time taken for commuters to get on and off the bus is not considered under the Loiter Time. A common complaint by commuters is that buses, after dropping off the passengers and allowing more to get in, idle at the bus stop usually until the next bus arrives. This leads to the people who are already in the bus waiting idly at the bus stop in a crowded bus senselessly. This action also picks up the passengers that are meant to go in the later bus which leads to the later bus not having enough passengers to cover their costs and thereby they too loiter at the bus stop. This occurs continuously resulting in the commuters being kept waiting in the bus at the bus stop for no reason. Loitering is a major issue with the Private Bus Service and frequent complaints are made by commuters regarding it. It is detrimental to the proper dispatching of buses as it delays the commuters and makes it difficult for the schedulers to draw up correct timetables (Source: Interviews with the WP RPTA and the NTC personnel).
 
-The data is gathered in this manual way because there is no automated data gathering mechanism currently in place for the private bus system in the WP.
+The data was gathered in this manual way because there is no automated data gathering mechanism currently in place for the private bus system in the Western Province. Further elaboration on automated data gathering and a brief description of the current state of affairs are mentioned in the following section.
 
 \section{Automated Data Gathering}
 
-\paragraph{ } While an automatic data gathering system would be immensely helpful to the scheduling unit of the WP RPTA, there is no such system in place currently. Such a system would aid in formulating proper timetables as well as monitoring and regulating the timetables and the buses for their adherence to said timetables. Proper and accurate data is very difficult to gather at the moment as all data gathering is done manually. This involves a huge amount of man-hours of work not forgetting the fact that the sample gathered is assumed to be representative of the whole system which might not always be the case. 
+\paragraph{ } While an automatic data gathering system would be immensely helpful to the scheduling unit of the WP RPTA, there is no such system in place currently. Such a system would aid in formulating proper timetables as well as monitoring and regulating the timetables and the buses for their adherence to said timetables. Proper and accurate data is very difficult to gather at the moment as all data gathering is done manually. This involves a huge amount of man-hours of work not forgetting the fact that the sample gathered is assumed to be representative of the whole system which might not always be the case.
 
-Furthermore, a route survey is only done when there is a huge change needed to the timetable; otherwise the timetable is a fixed entity. This is a very reactive stance to the situation which is the wrong policy to adopt as passenger demands vary and the service and the timetable needs to adjust accordingly. At present however, once the timetable is formulated and signed off by the higher authorities, it is not changed unless a significant number of people complain about. The service and timetable needs to be more proactive in order to offer a better service to the public.
+Furthermore, a route survey is only done when there is a significant change needed to the timetable; otherwise the timetable is a fixed entity. This is a very reactive stance to the situation which is the incorrect policy to adopt as passenger demands vary and the service and the timetable needs to adjust accordingly. At present however, once the timetable is formulated and signed off by the higher authorities, it is not changed unless a significant number of people complain about. The service and timetable needs to be more proactive in order to offer a better service to the public (Source: Interviews with the WP RPTA and the NTC personnel).
 
-An ideal Automatic Data Collection System (ADCS) would include provisions for Automatic Vehicle Location (AVL) data, Automatic Passenger Count (APC) data as well as the integration of an Automatic Fare Collection (AFC) System. Please refer to Figure~\ref{image-ADCS}. This would allow the schedulers to formulate much more accurate timetables taking into account the Passenger Demands (Load Factors) of the various buses at the various stops during various times of day. An Origin-Destination Matrix could also be obtained by analyzing this data to determine which segments of routes are most frequently used and therefore are more likely to be congested.
+An ideal Automatic Data Collection System (ADCS) would include provisions for Automatic Vehicle Location (AVL) data, Automatic Passenger Count (APC) data as well as the integration of an Automatic Fare Collection (AFC) System. Please refer to Figure~\ref{image-ADCS}. This would allow the schedulers to formulate much more accurate timetables taking into account the Passenger Demands (Load Factors) of the various buses at the various stops during various times of day. An Origin-Destination Matrix could also be obtained by analyzing this data to determine which segments of routes are most frequently used and therefore are more likely to be congested \citep{Wilson2008}.
 
 \begin {figure} [h!]
 \centering
@@ -392,35 +448,35 @@ An implementation of an Automatic Data Collection System (ADCS) could ultimately
 
 An ADCS has been proposed in the past but has been shot down and discouraged by the bus owners and operators. The main reason that they give for this is that the system is too costly for them to implement and it brings no additional value to them. This is a misguided notion by the owners and operators as the system could benefit them immensely in the long run. Revenue leakage, which is one of the main grievances given by bus owners, could be curbed through an implementation of an Automatic Fare Collection (AFC) System. Furthermore, it would bring about a sense of accountability and transparency in the payment of fares of private buses. It would be a cost in the short-term, but considering the long-term benefits, the owners/operators should consider it an investment to make the system and service future-proof.
 
-Furthermore, an Automatic Vehicle Location (AVL) system would allow commuters to know exactly where and when the next bus will be arriving providing more information and flexibility. Automatic Passenger Counting (APC) would give the schedulers enough information to ensure that timetables are working correctly and buses are dispatched to account for higher or lower passenger demand. The schedulers could also audit their timetables more frequently to ensure that schedules are kept current. It would also allow route monitors to ascertain if the owners/operators are overcrowding the buses causing discomfort to passengers. An Automatic Fare Collection (AFC) system would also bring great comfort to commuters who consistently complain about being overcharged or not receiving the proper balance money back from the conductor. An AFC would also greatly benefit the owners/operators because they could monitor and audit their income correctly and put paid to the revenue leakage that occurs consistently (according to the owners).
+Furthermore, an Automatic Vehicle Location (AVL) system would allow commuters to know exactly where and when the next bus will be arriving providing more information and flexibility. Automatic Passenger Counting (APC) would give the schedulers enough information to ensure that timetables are working correctly and buses are dispatched to account for higher or lower passenger demand. The schedulers could also audit their timetables more frequently to ensure that schedules are kept current. It would also allow route monitors to ascertain if the owners/operators are overcrowding the buses causing discomfort to passengers. An Automatic Fare Collection (AFC) system would also bring great comfort to commuters who consistently complain about being overcharged or not receiving the proper balance money back from the conductor. An AFC would also greatly benefit the owners/operators because they could monitor and audit their income correctly and put paid to the revenue leakage that occurs consistently (according to the owners) \citep{Wilson2008, Wilson2009, Wilson2012, Fijalkowski2010}.
 
 \subsection{Automatic Data Collection in the Inter-Provincial Service} 
 
 \paragraph{ } An Automatic Data Collection System is in place at the moment in the Inter-Provincial buses. The National Transport Commission (NTC) has taken steps to implement a system to track the location of the buses via a GPS tracking device fixed onto them. However, out of the 3500+ buses in operation in the Inter-Provincial service, only around 700 have been fixed with the device. Information obtained from the NTC states that a further 1000 buses will be equipped with the device within this year.
 
-Currently it only tracks the location and the speed of the bus. The system they have implemented consists of a device which is fixed on to the vehicle. This device tracks the location of the bus via GPS and relays the data back to the NTC servers via a GPRS connection. The device also contains an accelerometer to measure the speed of the vehicle. This allows the NTC to monitor the buses for possible speeding violations and reckless driving. Monitoring is done through a control center at the NTC head office in Narahenpita which is manned 24 hours a day. Apart from monitoring the buses, they provide information to the passengers and record complaints regarding errant bus operators.
+Currently, it only tracks the location and the speed of the bus. The system they have implemented consists of a device which is fixed on to the vehicle. This device tracks the location of the bus via GPS and relays the data back to the NTC servers via a GPRS connection. The device also contains an accelerometer to measure the speed of the vehicle. This allows the NTC to monitor the buses for possible speeding violations and reckless driving. Monitoring is done through a control center at the NTC head office in Narahenpita which is manned 24 hours a day. Apart from monitoring the buses, they provide information to the passengers and record complaints regarding errant bus operators.
 
 Owners/operators can also choose to have a still camera fixed onto the bus as well. This is compulsory for Luxury buses and it allows the NTC monitor overcrowding of the buses. When a complaint is made to the NTC hotline, the personnel at the NTC control center can activate the camera and take a picture to decide if the bus is overcrowded or not. They can then instigate punishment proceedings for the bus involved.
 
-The device costs around 45,000 rupees with the government subsidizing the cost. Eventually, the owners/operators have to pay only around 10,000 rupees. The objective of the NTC is to eventually have all the inter-provincial buses fitted with the device. This would allow the data to be collected automatically and that data would be used for the scheduling process and the formulation of timetables for the service.
+The device costs around 45,000 rupees with the government subsidizing the cost. Eventually, the owners/operators have to pay only around 10,000 rupees. The objective of the NTC is to eventually have all the inter-provincial buses fitted with the device. This would allow the data to be collected automatically and that data would be used for the scheduling process and the formulation of timetables for the service (Source: Interviews with personnel at the NTC).
 
 \subsection{Automatic Vehicle Location (AVL)}
 
-\paragraph{ } Vehicle Location data could be obtained through several methods. One of the main and most feasible methods would be to fix a GPS-based tracker on to the bus and monitoring its movement through a mapping software. This method, however, has a fairly large startup cost which has discouraged the stakeholders in the past. Alternatively, this could be achieved by crowdsourcing the Vehicle Location data through a mobile app. Automatic Vehicle Location (AVL) Data is very important as it reflects the current location of a bus and can be used to predict journey times and availability of buses for the commuters. A system could be built that uses AVL data to notify commuters of the current bus, the bus that is due to arrive next etc. This data is also very important in the scheduling stage of transport planning and could be used to formulate more efficient and effective timetables.
+\paragraph{ } Vehicle Location data could be obtained through several methods. One of the main and most feasible methods would be to fix a GPS-based tracker on to the bus and monitoring its movement through a mapping software. This method, however, has a fairly large startup cost which has discouraged the stakeholders in the past. Alternatively, this could be achieved by crowdsourcing the Vehicle Location data through a mobile app. Automatic Vehicle Location (AVL) Data is very important as it reflects the current location of a bus and can be used to predict journey times and availability of buses for the commuters. A system could be built that uses AVL data to notify commuters of the current bus, the bus that is due to arrive next etc. This data is also very important in the scheduling stage of transport planning and could be used to formulate more efficient and effective timetables \citep{Wilson2009}.
 
 \subsection{Automatic Passenger Counting (APC)}
 
 \paragraph{ } Automatic Passenger Counting (APC) is important in order to gauge the passenger demand or load factors in the buses. This data could be used to draw up origin-destination matrices in order to identify which segments of routes are most congested and which routes are not very congested at all. This all helps in the planning and dispatching of buses which eventually lead to a better schedule and a better service.
 
-The APC data could be obtained from an Automated Fare Collection (AFC) System such as a contactless smart card payment method. The implementation of both could potentially be very useful for the commuters and owners/operators alike.
+The APC data could be obtained from an Automated Fare Collection (AFC) System such as a contactless smart card payment method. The implementation of both could potentially be very useful for the commuters and owners/operators alike \citep{Wilson2009, Silva2010}.
 
 \subsection{Automatic Fare Collection (AFC)}
 
-\paragraph{ } The implementation of an Automatic Fare Collection system has been in the works for some time and discussions with industry experts have revealed that a working system is available. However it is not being implemented as the government still has some regulatory and other issues to sort out first. The system involves a Prepaid Smart Card system where the Smart Card could be used for cashless payment of bus fares. Commuters could also recharge their cards when the stored value in the cards runs low (akin to reloading a prepaid mobile phone). This is just one of the methods that could be used to implement an automated fare collection system.
+\paragraph{ } The implementation of an Automatic Fare Collection system has been in the works for some time and discussions with industry experts have revealed that a working system is available. However it is not being implemented as the government still has some regulatory and other issues to sort out first. The system involves a Prepaid Smart Card system where the Smart Card could be used for cashless payment of bus fares. Commuters could also recharge their cards when the stored value in the cards runs low (akin to reloading a prepaid mobile phone). This is just one of the methods that could be used to implement an automated fare collection system \citep{Wilson2009, Silva2010}.
 
-As its popularity grows, NFC or Near-Field Communication has garnered the attention of public transport systems around the world. It allows a user to use everyday devices (such as a mobile phone or an ATM card etc.) as a transaction medium. This could lead to enabling payment of bus fares with a mobile phone which is a very innovative and highly lucrative area to look into. It would bring comfort to passengers and allow owners/operators to receive the payment directly from the commuters. Therefore, the potential market and it's applications is vast. However, Sri Lanka does not have any such systems or parties interested in a system like this which is unfortunate. One could argue that before going to such technologically advanced lengths, the authorities should focus on a smaller system and implement one which is more appropriate to the Sri Lankan context which is a fair argument. The problem is that currently \textit{no system at all} exists, which is not a good situation for the private bus service and the country.
+As its popularity grows, NFC or Near-Field Communication has garnered the attention of public transport systems around the world. It allows a user to use everyday devices (such as a mobile phone or an ATM card etc.) as a transaction medium. This could lead to enabling payment of bus fares with a mobile phone which is a very innovative and highly lucrative area to look into. It would bring comfort to passengers and allow owners/operators to receive the payment directly from the commuters. Therefore, the potential market and it's applications is vast. However, Sri Lanka does not have any such systems or parties interested in a system like this which is unfortunate. One could argue that before going to such technologically advanced lengths, the authorities should focus on a smaller system and implement one which is more appropriate to the Sri Lankan context which is a fair argument. The problem is that currently \textit{no system at all} exists, which is not a good situation for the private bus service and the country \citep{Silva2010, Sinha2012}.
 
-As mentioned previously, the NTC has implemented a GPS-based Vehicle Tracking system in the Inter-Provincial Bus Transport Service as an Automated Data Collection System. However, it only collectes the Vehicle Location data. The Passenger Counts data is not collected automatically and there is no system in place to do so. However, the Inter-Provincial Bus Service is more developed than the Intra-Provincial Service in the Western Province as the NTC has made it compulsory for Inter-Provincial buses to have Electronic Ticketing Machines (ETM). This means that at least the passenger counts data \textit{is} recorded. The data that is saved in the Ticketing Machines could be accessed later and the data be obtained for scheduling purposes.
+As mentioned previously, the NTC has implemented a GPS-based Vehicle Tracking system in the Inter-Provincial Bus Transport Service as an Automated Data Collection System. However, it only collects the Vehicle Location data. The Passenger Counts data is not collected automatically and there is no system in place to do so. However, the Inter-Provincial Bus Service is more developed than the Intra-Provincial Service in the Western Province as the NTC has made it compulsory for Inter-Provincial buses to have Electronic Ticketing Machines (ETM). This means that at least the passenger counts data \textit{is} recorded. The data that is saved in the Ticketing Machines could be accessed later and the data be obtained for scheduling purposes.
 
 \subsection{Gathering the Data} 
 
@@ -430,9 +486,12 @@ The data that is required for the schedulers is the Vehicle Location data and th
 
 Gathering of the Passenger Demand data is a little more trickier. Passenger Demand is basically a reflection of the number of people that travel in a bus and details of where they get on and off the bus. This could be achieved by counting the number of tickets issued and analyzing the ticketing data. This method however, has a major drawback. It assumes that all commuters are issued a ticket which may not always be the case. Also, not all buses currently have Electronic Ticketing Machines which is an obstacle. The fact that it is not compulsory for the private buses in the WP plying on intra-provincial routes to have Electronic Ticketing Machines is also a major disadvantage to this method. In conclusion, it is clearly evident that reform and stricter regulation of the service is required in order to improve it.
 
-\newpage
+Section~\ref{GatheredData} displays a sample of the data that was gathered during the pilot route survey. The data confirms what most commuters complain about on a regular basis, that the bus loitering is a problem that needs to be dealt with. The survey data also implied that Loitering adds to the problem of overcrowding buses which results in increased dissatisfaction by the commuters.
 
-\section{Gathered Data}
+%\newpage
+
+\section {Gathered Data}
+\label {GatheredData}
 
 \paragraph{ } Listed below is a sample of the data that was collected. The full list of data is available under Appendix~\ref{appendix-CompleteSetOfData}.
 
@@ -479,21 +538,21 @@ Rajagiriya	&25	&5	&20	&48\\
 \centering
 \begin{tabular}{|l|r|r|r|}
 \hline
-Bus Stop & Arrival Time & Departure Time & Loiter Time (mins) \\
+Bus Stop & Arrival Time (h) & Departure Time (h) & Loiter Time (mins) \\
 \hline
-Kolpetty Depot	&	&1540	&0\\
-Supermarket	&1544	&1545	&1\\
-Alwis Place	&1546	&1546	&0\\
-Library	&1548	&1549	&1\\
-SLTA	&1550	&1551	&1\\
-Nelum Pokuna	&1552	&1553	&1\\
-Asha Central	&1556	&1556	&0\\
-Wijerama	&1558	&1558	&0\\
-Borella	&1608	&1609	&1\\
-Devi Balika	&1611	&1611	&0\\
-Castle Street	&1614	&1614	&0\\
-Ayurveda	&1615	&1616	&1\\
-Rajagiriya	&1618	&1624	&6\\
+Kolpetty Depot	&	&15.40	&0\\
+Supermarket	&15.44	&15.45	&1\\
+Alwis Place	&15.46	&15.46	&0\\
+Library	&15.48	&15.49	&1\\
+SLTA	&15.50	&15.51	&1\\
+Nelum Pokuna	&15.52	&15.53	&1\\
+Asha Central	&15.56	&15.56	&0\\
+Wijerama	&15.58	&15.58	&0\\
+Borella	&16.08	&16.09	&1\\
+Devi Balika	&16.11	&16.11	&0\\
+Castle Street	&16.14	&16.14	&0\\
+Ayurveda	&16.15	&16.16	&1\\
+Rajagiriya	&16.18	&16.24	&6\\
 \hline
 Total Loiter Time & & & 12 mins \\
 Duration of Trip & & 44 mins & \\
@@ -505,19 +564,235 @@ Duration of Trip & & 44 mins & \\
 
 \begin {figure} [h!]
 \centering
-\includegraphics[scale=0.7]{passengerLoadData-Trip1}
+\includegraphics[scale=0.5]{passengerLoadData-Trip1}
 \caption [Graph - Passenger Load Fluctuations - Trip 1] {Graph - Passenger Load Fluctuations - Trip 1}
 \label {image-passengerLoadData-Trip1}
 \end {figure}
 
 \begin {figure} [h!]
 \centering
-\includegraphics[scale=1]{loiterTimeData-Trip1}
+\includegraphics[scale=0.5]{loiterTimeData-Trip1}
 \caption [Graph - Bus Loiter Time Data - Trip 1] {Graph - Bus Loiter Time Data - Trip 1}
 \label {image-loiterTimeData-Trip1}
 \end {figure}
 
 \end{itemize}
+
+
+\newpage
+
+\section {Stakeholder Analysis}
+\label {StakeholderAnalysis}
+
+\paragraph{} The stakeholders of this Public Transport System are illustrated in Figure~\ref{image-stakeholdersDiagram}.
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.75]{stakeholdersDiagram}
+\caption [Stakeholders Diagram] {Stakeholders Diagram}
+\label {image-stakeholdersDiagram}
+\end {figure}
+
+\paragraph{} The most prominent stakeholders in this system are the Commuters and the Bus Owners/Operators. These 2 serve as the Demand and Supply sides of the economic equation respectively. The conflicting requirements of these two parties are illustrated in Figure~\ref{image-mainStakeholdersDiagram}.
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.7]{mainStakeholdersDiagram}
+\caption [Requirements of Main Stakeholders] {Requirements of Main Stakeholders}
+\label {image-mainStakeholdersDiagram}
+\end {figure}
+
+\paragraph{} However, it is the Transport Authority that has the responsibility to keep these two parties happy. Therefore the most important stakeholder of the whole system is the Transport Authority and that is why it is important that a System is implemented that assists the Schedulers in their decision-making process. The workflow of the Scheduling Unit of the WP RPTA is comprised of 3 main stages. They are illustrated in Figure~\ref{image-timetablingProcessSteps}. The proposed Decision Support System,detailed in Chapter~\ref{chapter-ProposedSolution} will have this workflow at its core.
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.5]{timetablingProcessSteps}
+\caption [Stages in the Timetabling Process Flow] {Stages in the Timetabling Process Flow}
+\label {image-timetablingProcessSteps}
+\end {figure}
+
+\newpage
+
+\section{Possible Alternative Solutions}
+
+\paragraph{} From the contents of the current Chapter, the problems of the current system and transport service are clearly evident. From the Pilot Route Survey that was conducted, the data gathering requirements of the proposed DSS is clear.
+
+Accordingly, possible solutions to these problems were an implementation of a Management Information System or a standalone system to create timetables for the schedulers. However neither of these really addressed all of the issues for all of the stakeholders. Management Information Systems are systems or processes that provide the information necessary to manage an organization effectively \citep{Comptroller1995, TexasAMUni2012}. Although this does accomplish the outcome of better management for the Schedulers, it does little to manage the customer-facing activities. It also focuses on management of the organization instead of aiding in the decision-making process.
+
+Alternatively, a standalone system to merely create timetables and schedules for the bus routes does not solve all of the problems faced. Therefore, the need for a Decision Support System to aid the various stakeholders in their decision-making processes as well as enabling the proper monitoring and regulation of the service is clearly evident. The definition of a Decision Support System and how it relates to the transportation problem has already been discussed in this document. Therefore, in the next Chapter, we will see what the proposed Decision Support System is. This will include the higher-level system architecture, the system features, the main entities \& their relationships and a few screenshots of the prototype that was built for user testing.
+
+\newpage
+
+% begin Chapter ProposedSolution
+
+\chapter {Proposed Solution}
+\label{chapter-ProposedSolution}
+
+\section *{Proposed Decision Support System}
+
+\paragraph {} So far we have seen how the problem of the public transport system is structured and how it affects the stakeholders. We also saw how the nature of the problem demands a Decision Support System-like solution. This Chapter attempts to propose a DSS that deals with the public transportation problem. The architecture of the proposed system will be provided along with the proposed system features. The Chapter will end with a few UI screenshots of the prototype that was developed to test the usability and effectiveness of the functionality with the users.
+
+\section{System Architecture}
+
+\paragraph{ } The proposed system is designed as a web application following the client-server model. This design is the most conducive to the problem as it enables access to all stakeholders concerned in a distributed fashion. Therefore, commuters can access the system on-demand while allowing the schedulers access to the system and the data in real-time.
+
+The prototype system used the three-tier architecture in the application. This architecture was chosen because it allowed the development of the prototype to be faster and more easily adaptable to possible requirements changes. The technologies used for the prototype are listed below,
+
+\begin {itemize}
+\item Programming Language: PHP
+\item Database: MySQL
+\item UI Framework: Twitter Bootstrap
+\item Theme: Flatly theme by Bootswatch (Source: http://bootswatch.com/2/flatly/)
+\end {itemize}
+
+The software architecture of the system is depicted in Figure~\ref{image-proposedSystemArchitecture}. (subsystems are outlined in red dashes)
+
+\begin {figure} [h!]
+\centering
+\includegraphics [scale=0.45] {proposedSystemArchitecture}
+\caption [Proposed System Architecture] {Proposed System Architecture}
+\label {image-proposedSystemArchitecture}
+\end {figure}
+
+The prototype that was created only included a subset of this whole architecture due to time and resource constraints. Also of note is the fact that the Data Gathering subsystem involves the data gathering infrastructure and is beyond the scope of this research project. However, it is an imperative aspect of the whole system.
+
+\subsection{System Entities \& their Relationships}
+
+\paragraph{} The Proposed System works with 4 main entities at it's core. They are,
+
+\begin {itemize}
+\item \textbf{Bus Routes} - Bus Routes refer to the routes that the buses provide the service on. They consist of a Beginning Bus Stop, an Ending Bus Stop and Bus Stops in between. One Bus Route may have many Stops
+\item \textbf{Bus Stops} - This refers to the place allocated for a Bus to stop and drop off and/or pick up passengers. This is also known as the Bus Stand
+\item \textbf{Buses} - This refers to the individual Buses that operate and provide the service to the commuters. One Bus is assigned to only one Bus Route. One Bus may have many Bus Personnel attached to it.
+\item \textbf{Bus Personnel} - This refers to the people involved with the operation of the buses. This includes the Bus Driver, the Bus Conductor and the Bus Owner. In certain instances, these roles overlap. Accordingly, there may be situations where a Bus Driver is also an Owner or a Bus Conductor who is also an Owner. Each Bus Person (singular of Personnel) is assigned to only one Bus.
+\end {itemize}
+
+\paragraph{} Apart from these 4 core entities, the \textbf{Complaints} and the \textbf{General Feedback} entities are present. They exist to provide much needed feedback to the schedulers so that service quality can be maintained. These entities provide the basis for the Feedback step in the timetabling process of the schedulers (For more information regarding this process, see Figure~\ref{image-timetablingProcessSteps}).
+
+Additionally the \textbf{Survey}, \textbf{Trip} and \textbf{Stop Activity} entities exist to aid the Survey functionality of the schedulers. A brief intro into what these entities are is listed below,
+
+\begin {itemize}
+\item \textbf{Survey} - An investigation of the buses in a route in terms of the passenger loads on the buses plying on that route. These are called route surveys and the Schedulers say ascertain the passenger loads as input for the timetabling through this process. One Survey is conducted on only one route at a time.
+\item \textbf{Trip} - A trip is one-way journey between the Beginning Stop and the Ending Stop of a Bus Route. A Survey has many Trips included. Within the Trip, there are many Stops, and consequently many Stop Activities.
+\item \textbf{Stop Activity} - A Stop Activity is the record of the exchanges of passengers that occurs at a Bus Stop during a Trip. 4 main facts are recorded for a Stop Activity when the bus stops at a Bus Stop. The number of passengers who get off the bus, number of people that get on the bus, the time (timestamp) the bus came to a stop and the passengers started to get off the bus at the Bus Stop and finally the time (timestamp) the bus departed the Bus Stop.
+\end {itemize}
+
+The above mentioned entities allow the Schedulers to carry out a route survey and gather the necessary data for the timetabling process. The Route Surveys that the Schedulers perform are imperative in their timetable formulation as it acts as the data input for the process. The Schedulers mainly obtain the Passenger Load information which is directly related to the dispatching of buses on a route. Loiter time data is also used to identify errant bus operators as well as to continuously monitor the total travel time on a route.
+
+
+\section{System Features}
+\label{systemFeatures}
+
+\paragraph{ } The list of system features and functionality is noted below. Please note, the features marked under \textit{Public} is available for the regular commuters to access while the functionality marked under \textit{Admin} is only available for the Schedulers and other administrative staff at the Transport Authority.
+
+\begin{itemize}
+
+\item Public Functions
+\begin{itemize}
+\item \textbf{Information Portal for Bus Routes, Stops, Buses and Bus Personnel} - This is, as its name suggests, the functionality of providing the data about the 4 main entities related to the transportation service in a smile easy-to-use, easy-to-read-and-understand interface. The information includes the basics from name of stop (for Bus Stops) and the Stops along a particular route (for Bus Routes) to more advanced things like the Personnel assigned to a particular Bus and the number of complaints received on a particular Bus.
+\item \textbf{Information Portal for Bus Fares} - This would basically provide the details of the Bus fares in a given route.
+\item \textbf{Bus Route Finder functionality} - When an origin and destination stop are given, the user is presented with a list of bus routes to take
+\item \textbf{Submitting and reviewing submitted General Feedback} - Using this functionality, users can provide comments (good or bad) regarding the 4 main entities. This goes hand in hand with the Complaints and acts as a complimenting function to the Complaints.
+\item \textbf{Submitting and reviewing submitted Complaints} - Users can submit their complaints to the authority and these will be investigated and action taken. The Complaints also acts as a notification for the Schedulers in their timetabling process. For instance when there are a lot of complaints on a particular route regarding overcrowded buses or consistently delayed buses, the Schedulers can reconsider the timetable for that route and improve it. Currently this connection between the Complaints and the Schedulers is not available and therefore the Schedulers have no idea which areas need improvement.
+\end{itemize}
+
+\item Admin Functions
+\begin{itemize}
+\item \textbf{Survey data storage, retrieval and visualization} - this is one of the main functionalities of the proposed system. it provides the knowledge base as well as the main input to the timetabling process of the Schedulers.
+\item \textbf{Timetable Storage, Retrieval and Visualization} - Timetables are documents that the buses are dispatched according to. The tracking of buses according to their dispatch times is currently done manually. The times that the buses are dispatched are recorded on timetable and sent in to the regional offices. This functionality of the system attempts to digitize that by having a digital representation of the data so that it can be stored and retrieved later.
+\item \textbf{Timetable Generation} - This functionality enables the schedulers to automatically generate timetables for a given route. As mentioned previously, this is currently done manually and the proposed system would incorporate a the feature of generating the timetable by calculating the average headways.
+\item \textbf{Vehicle and Crew Scheduling} - This is the next step in the planning process. The Vehicle and Crew Scheduling functions are the rosters that the bus operators follow. This function enables the Schedulers to automatically generate these without having to do this step of the process manually.
+\item \textbf{Complaint and General Feedback tracking Dashboard} - The Complaint and General Feedback functions serve as the indicator in this system. It tells the Schedulers which routes are doing well and which ones aren't, which buses are breaking the law and which bus personnel has a good record. It allows the authority to analyze the quality of the service and includes the commuters in the process of measuring service quality.
+\end{itemize}
+
+\end{itemize}
+
+
+\section{UI Screenshots}
+
+\paragraph{ } 
+
+
+\newpage
+
+
+
+
+% begin Chapter ResearchEvaluation
+
+\chapter {Research Evaluation}
+\label{chapter-ResearchEvaluation}
+
+\paragraph {} In the previous chapter, we took a look at the proposed system architecture and it's features. We also understood what the entities in the system were and how they relate to each other. In any research, the evaluation of the concept is as, if not more, important to the justifying the end result. Accordingly an evaluation of the prototype was carried out with the schedulers and the commuters.
+
+\section{User Evaluation of Prototype}
+
+\paragraph{} There are 3 main types of users that used this research prototype. They are,
+
+\begin{itemize}
+\item Schedulers of the Transport Authority
+\item Commuters
+\item Bus Owners and Operators
+\end{itemize}
+
+\paragraph{} Of these 3 main types of users, the Schedulers act as the Admins and they can carry out the Admin functionalities listed under Section~\ref{systemFeatures}. Each of these users will have different views and functionalities associated with them. The User evaluation was carried out only with the Schedulers and the Commuters as I was unable to find any Bus Owners / Operators willing to participate in this study.
+
+The prototype was hosted on a free hating service and the Schedulers were interviewed while they were using the system to obtain a qualitative feedback on the prototype and its functionality. The URL of the public interface was sent to regular commuters to ascertain their feedback on the system. The prototype system can be accessed at \url{http://gaman.byethost4.com/}
+
+\subsection{Feedback of the Schedulers}
+
+\paragraph{} The feedback from the schedulers was overwhelmingly positive towards the system. They said they welcome a system like this and would gladly use it if it does eventually become a system ready for implementation. Furthermore, they mentioned that the User Interface was very simple, easy-to-use and intuitive.
+
+The Schedulers also pointed out that an implementable system would need some added functionality such as the ability to store timetables, generate timetables automatically when given the data and the vehicle and crew scheduling functionalities. However, they said as this is a prototype system, the concept is correct, sound and suitable for further development.
+
+\subsection{Feedback of the Commuters}
+
+\paragraph{} After hosting the prototype online, a group of commuters were provided the link and given an explanation on how to use the system. Then they were asked to fill out a survey on their experience using the Gaman prototype system. The key points have been summarized and the results have been tabulated below. The Survey can be accessed at the following URL: \url{https://docs.google.com/forms/d/100pWQ4476Mo4tqn3SHLmVO1r8cB-ayuQEdai8xWyjCI/viewform/}
+
+\begin {itemize}
+
+\item Number of Participants: 39
+\item Age group:
+\begin {itemize}
+\item Ages 20-35: 38/39
+\item Ages 10-19: 1/39
+\end {itemize}
+
+\item Frequency of travel in the bus:
+
+\begin {itemize}
+\item Daily, one or two times a day: 20/39
+\item Daily, several times a day: 15/39
+\item A few times a week: 3/39
+\item A few times a month: 1/39
+\end {itemize}
+
+\item Question - Would you use a system like this if it was implemented?
+\begin {itemize}
+\item Yes: 17/39
+\item Oh my god, yes!: 16/39
+\item No: 6/39
+\end {itemize}
+
+\end {itemize}
+
+
+\newpage
+
+% begin Chapter ConclusionAndFutureWork
+
+\chapter {Conclusion and Future Work}
+\label{chapter-ConclusionAndFutureWork}
+
+\paragraph{} This research project looked at the public transportation problem in developing countries like Sri Lanka. The research commenced with the intention of looking into the problems that the Western Province Private Bus Service was facing and possibly providing solutions for them. Over the course of the project, the service and the prevalent system was analyzed and the requirements were gathered. Consequently a hypothesis was formed regarding the usage of a Decision Support System to alleviate the issues. A prototype was then built with the intention of gaining further insight into the requirements of the users and the concept of using a decision support system in the context of public transportation.
+
+The main outcome of this research project was to identify and analyze the problems in the public transportation system in the western province. Testing the concept of using a decision support system within this domain was also an important outcome of this project. We can now show that a DSS with a similar architecture and concept would work in other developing countries as well. The main point of applying this DSS concept is the cost benefit. As this is an open-source project, it is greatly beneficial for government entities such as the WP RPTA. Similarly, this same concept could be applied in other developing countries around the world.
+
+
+
+\newpage
+
+% begin Appendix
 
 \appendix
 \chapter{Complete Set of Gathered Data}
@@ -599,21 +874,21 @@ Rajagiriya	&11	&7	&4	&58\\
 \centering
 \begin{tabular}{|l|r|r|r|}
 \hline
-Bus Stop & Arrival Time & Departure Time & Loiter Time (mins) \\
+Bus Stop & Arrival Time (h) & Departure Time (h) & Loiter Time (mins) \\
 \hline
-Kolpetty Depot	&	&1703	&0\\
-Supermarket	&1703	&1704	&1\\
-Alwis Place	&1705	&1705	&0\\
-Library	&1708	&1708	&0\\
-SLTA	&1709	&1709	&0\\
-Nelum Pokuna	&1711	&1712	&1\\
-Asha Central	&1715	&1716	&1\\
-Wijerama	&1717	&1718	&1\\
-Borella	&1721	&1725	&4\\
-Devi Balika	&1727	&1727	&0\\
-Castle Street	&1729	&1729	&0\\
-Ayurveda	&1731	&1738	&7\\
-Rajagiriya	&1740	&1743	&3\\
+Kolpetty Depot	&	&17.03	&0\\
+Supermarket	&17.03	&17.04	&1\\
+Alwis Place	&17.05	&17.05	&0\\
+Library	&17.08	&17.08	&0\\
+SLTA	&17.09	&17.09	&0\\
+Nelum Pokuna	&17.11	&17.12	&1\\
+Asha Central	&17.15	&17.16	&1\\
+Wijerama	&17.17	&17.18	&1\\
+Borella	&17.21	&17.25	&4\\
+Devi Balika	&17.27	&17.27	&0\\
+Castle Street	&17.29	&17.29	&0\\
+Ayurveda	&17.31	&17.38	&7\\
+Rajagiriya	&17.40	&17.43	&3\\
 \hline
 Total Loiter Time & & & 18 mins \\
 Duration of Trip & & 40 mins & \\
@@ -656,21 +931,21 @@ Rajagiriya	&18	&12	&6	&70\\
 \centering
 \begin{tabular}{|l|r|r|r|}
 \hline
-Bus Stop & Arrival Time & Departure Time & Loiter Time (mins) \\
+Bus Stop & Arrival Time (h) & Departure Time (h) & Loiter Time (mins) \\
 \hline
-Kolpetty Depot	&	&1819	&0\\
-Supermarket	&1820	&1822	&2\\
-Alwis Place	&1823	&1824	&1\\
-Library	&1826	&1826	&0\\
-SLTA	&1828	&1828	&0\\
-Nelum Pokuna	&1830	&1830	&0\\
-Asha Central	&1835	&1835	&0\\
-Wijerama	&1835	&1835	&0\\
-Borella	&1837	&1838	&1\\
-Devi Balika	&1841	&1841	&0\\
-Castle Street	&1843	&1843	&0\\
-Ayurveda	&1845	&1845	&0\\
-Rajagiriya	&1847	&1853	&6\\
+Kolpetty Depot	&	&18.19	&0\\
+Supermarket	&18.20	&18.22	&2\\
+Alwis Place	&18.23	&18.24	&1\\
+Library	&18.26	&18.26	&0\\
+SLTA	&18.28	&18.28	&0\\
+Nelum Pokuna	&18.30	&18.30	&0\\
+Asha Central	&18.35	&18.35	&0\\
+Wijerama	&18.35	&18.35	&0\\
+Borella	&18.37	&18.38	&1\\
+Devi Balika	&18.41	&18.41	&0\\
+Castle Street	&18.43	&18.43	&0\\
+Ayurveda	&18.45	&18.45	&0\\
+Rajagiriya	&18.47	&18.53	&6\\
 \hline
 Total Loiter Time & & & 10 mins \\
 Duration of Trip & & 34 mins & \\
@@ -712,21 +987,21 @@ Kolpetty Depot	&0	&43	&-43	&0\\
 \centering
 \begin{tabular}{|l|r|r|r|}
 \hline
-Bus Stop & Arrival Time & Departure Time & Loiter Time (mins) \\
+Bus Stop & Arrival Time (h) & Departure Time (h) & Loiter Time (mins) \\
 \hline
-Rajagiriya	&1628	&1633	&5\\
-Cotta road	&1634	&1634	&0\\
-Ayurveda	&1635	&1636	&1\\
-Castle street	&1638	&1639	&1\\
-Borella	&1640	&1641	&1\\
-Horton Place	&1642	&1642	&0\\
-Wijerama	&1644	&1644	&0\\
-Asha Central	&1647	&1647	&0\\
-Nelum Pokuna	&1648	&1648	&0\\
-Library	&1650	&1650	&0\\
-Liberty	&1652	&1652	&0\\
-Galle Road	&1654	&1654	&0\\
-Kolpetty Depot	&1655	&	&0\\
+Rajagiriya	&16.28	&16.33	&5\\
+Cotta road	&16.34	&16.34	&0\\
+Ayurveda	&16.35	&16.36	&1\\
+Castle street	&16.38	&16.39	&1\\
+Borella	&16.40	&16.41	&1\\
+Horton Place	&16.42	&16.42	&0\\
+Wijerama	&16.44	&16.44	&0\\
+Asha Central	&16.47	&16.47	&0\\
+Nelum Pokuna	&16.48	&16.48	&0\\
+Library	&16.50	&16.50	&0\\
+Liberty	&16.52	&16.52	&0\\
+Galle Road	&16.54	&16.54	&0\\
+Kolpetty Depot	&16.55	&	&0\\
 \hline
 Total Loiter Time & & & 8 mins \\
 Duration of Trip & & 22 mins & \\
@@ -770,21 +1045,21 @@ Kolpetty Depot	&0	&23	&-23	&0\\
 \centering
 \begin{tabular}{|l|r|r|r|}
 \hline
-Bus Stop & Arrival Time & Departure Time & Loiter Time (mins) \\
+Bus Stop & Arrival Time (h) & Departure Time (h) & Loiter Time (mins) \\
 \hline
-Rajagiriya	&1740	&1743	&3\\
-Cotta Road	&1744	&1745	&1\\
-Ayurveda	&1749	&1749	&0\\
-Castle Street	&1752	&1752	&0\\
-Borella	&1755	&1756	&1\\
-Horton Place	&1757	&1758	&1\\
-Wijerama	&1759	&1759	&0\\
-Asha Central	&1800	&1800	&0\\
-Nelum Pokuna	&1801	&1802	&1\\
-Library	&1803	&1803	&0\\
-Liberty	&1805	&1805	&0\\
-Galle Road	&1808	&1808	&0\\
-Kolpetty Depot	&1809	&	&0\\
+Rajagiriya	&17.40	&17.43	&3\\
+Cotta Road	&17.44	&17.45	&1\\
+Ayurveda	&17.49	&17.49	&0\\
+Castle Street	&17.52	&17.52	&0\\
+Borella	&17.55	&17.56	&1\\
+Horton Place	&17.57	&17.58	&1\\
+Wijerama	&17.59	&17.59	&0\\
+Asha Central	&18.00	&18.00	&0\\
+Nelum Pokuna	&18.01	&18.02	&1\\
+Library	&18.03	&18.03	&0\\
+Liberty	&18.05	&18.05	&0\\
+Galle Road	&18.08	&18.08	&0\\
+Kolpetty Depot	&18.09	&	&0\\
 \hline
 Total Loiter Time & & & 7 mins \\
 Duration of Trip & & 26 mins & \\
