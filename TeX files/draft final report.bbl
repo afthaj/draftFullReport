@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{53}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -74,6 +74,13 @@ DepartmentOfCensusAndStatistics.
   \url{http://www.statistics.gov.lk/PopHouSat/CPH2012Visualization/htdocs/index.php}.
 \newblock (Online; Accessed 13th February 2013).
 
+\bibitem[Fedra(2000)]{Fedra2000}
+Kurt Fedra.
+\newblock Decision support systems, an introduction to dss with environmental
+  application examples, 2000.
+\newblock URL \url{www.ess.co.at/TEACHING/FTP/GEO07.ppt}.
+\newblock (Online; Accessed 23rd September 2013).
+
 \bibitem[Fijalkowski(2010)]{Fijalkowski2010}
 Jared~Arthur Fijalkowski.
 \newblock Using automatically collected data to improve the bus service
@@ -101,6 +108,11 @@ Liping Fu, Qing Liu, and Paul Calamai.
 Dennis Huisman.
 \newblock \emph{Integrated and Dynamic Vehicle and Crew Scheduling}.
 \newblock PhD thesis, Erasmus University, Rotterdam, 2004.
+
+\bibitem[Jackson(1998)]{Jackson1998}
+Peter Jackson.
+\newblock \emph{Introduction To Expert Systems (3 ed.)}.
+\newblock Addison-Wesley, 1998.
 
 \bibitem[Keen(1980)]{Keen1980}
 Peter Keen.

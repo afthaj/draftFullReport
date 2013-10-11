@@ -15,6 +15,18 @@
 \usepackage[table]{xcolor}
 \usepackage{color, colortbl}
 %\usepackage{hyperref}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+\newacronym{sl}{SL}{Sri Lanka}
+\newacronym{wp}{WP}{Western Province}
+\newacronym{rpta}{RPTA}{Road Passenger Transport Authority}
+\newacronym{ntc}{NTC}{National Transport Commission}
+\newacronym{sltb}{SLTB}{Sri Lanka Transport Board}
+\newacronym{dss}{DSS}{Decision Support System}
+\newacronym{ict}{ICT}{Information and Communication Technology}
+\newacronym{is}{IS}{information System}
+\newacronym{gps}{GPS}{Global Positioning System}
 
 
 \title{
@@ -40,6 +52,9 @@ A Decision Support System
 \listoftables
 \newpage
 
+%\printglossary[type=\acronymtype] % prints just the list of acronyms
+%\newpage
+
 % begin Abstract
 
 \section*{Abstract}
@@ -48,9 +63,9 @@ A Decision Support System
 
 However, the system is rife with inefficiencies and shortcomings. Delays, overcrowded buses and bus strikes are commonplace and the service is poor to say the least. The problems in the system do not merely affect the transportation industry but has a knock-on effect to all walks of daily life for the people in the country. The productivity of the workforce suffers due to this inefficiency in the main public transport system.
 
-The biggest problem that the commuters outline is the need to improve the service in terms of its schedule reliability and passenger overcrowding. Meanwhile the bus operators complain that the revenue leakage is a major issue and needs to be rectified. However, the status quo continues without any solutions and these problems continue to haunt the average commuter.
+The biggest problem that the commuters outline is the need to improve the service in terms of its schedule reliability and passenger overcrowding. Meanwhile, the bus operators complain that the revenue leakage is a major issue and needs to be rectified. However, the status quo continues without any solutions and these problems continue to haunt the average commuter.
 
-Therefore, this research attempts to analyse the problems prevalent in the system and provide a bus scheduling solution to minimize/eliminate the existing problems associated with the inefficient bus service.
+The main issue of a lack of a proper Information System is at the core of all of the problems. Therefore, this research analyses the problems prevalent in the system and provides a Decision Support System as a Solution in order to minimize/eliminate the existing problems. The project identifies and analyses the current system and provides a Decision Support System concept that can be applied to similar systems in other developing countries around the world.
 
 \newpage
 
@@ -165,7 +180,7 @@ There are several issues that commuters highlight consistently. These are listed
 	\item Operating without a valid driver's license, revenue license, and/or route permit
 	\end {enumerate}
 \end {enumerate}
-References: \citep{Wickremasekara2012, Range2012}, comments by frequent commuters, data gathered through a survey.
+References: \citep{Wickremasekara2012, Range2012}, comments by frequent commuters, data gathered through the Pilot Route Survey.
 
 \newpage
 
@@ -218,7 +233,8 @@ The next step is the timetable. They formulate this by calculating the average h
 
 Next is the scheduling of the buses to the timetable. The scheduling officers schedule the buses to the bus routes manually using their observations, experience and knowledge. Once the scheduling is complete, the crew rosters are formulated using the schedules. 
 
-Finally, the WP RPTA, the Bus Owners, the Bus Operators and the Union reps then agree on the revised bus schedule. After the agreement is signed, the revised schedule is placed into circulation and used on the bus route (Data gathered through interviews with the Scheduling Unit of the WP RPTA).
+Finally, the revised schedule is placed into circulation and used on the bus route (Source: Data gathered through interviews with the Scheduling Unit of the WP RPTA).
+
 As the crew of a particular bus only operates that bus, the steps of vehicle scheduling and crew scheduling could be and should be carried out together. This is known as Integrated Vehicle and Crew Scheduling and literature to support this has been mentioned in the Literature Review of this thesis document.
 
 As mentioned previously, until the mid-2000’s the private buses in the Western Province did not have predefined schedules to operate with. The buses were dispatched as soon as they came in to the terminal and the operators did not have predefined working hours and trips to complete for each working day \citep{Piyadasa2005}. However, thanks to research efforts by the University of Moratuwa almost all of the 450+ routes in the Western Province now have working timetables. Despite these timetables being implemented and in operation, they are not being properly adhered to and the quality of the bus service is still well below what is needed.
@@ -237,41 +253,72 @@ Also of note is how the revision process is handled. A revision to an existing s
 
 \newpage
 
-%
 
 \section{Decision Support Systems: an Introduction}
 \label{section-DSSIntro}
 
+\paragraph{} According to the nature of the problems currently in the Transportation Service, it is evident that some form of Information System is required to properly manage and monitor it. A Decision Support System seems to suit the need of the transportation service. Therefore, a brief introduction to the concept is provided herewith.
 
+Decision Support Systems are defined as a set of related computer programs and the data required to assist with analysis and decision-making within an organization. The emphasis in DSSs are towards the assitance they provide for the decision-making process. Further details about the idea of DSSs are presented in Section~\ref{section-DSS}.
+
+The requirements of the Transportation Service are such that it suits the offering that DSSs provide. A mechanism that aids the Schedulers in their timetabling process workflow while providing Commuters with the necessary information about the Transportation Service that helps them arrive at an informed decision is exactly what is required. Furthermore, the system's requirements go beyond a simple Management Information System or a Standalone software solution. 
+
+According to \citep{Fedra2000}, in a real-world scenario, a typical decision-making process involves the following characteristics,
+
+\begin {itemize}
+\item Multiple actors
+\item Conflicting objectives
+\item Multiple criteria
+\item Plural rationalities
+\item Hidden agenda
+\end {itemize}
+
+These are consequently exactly what is prevalent in the current Transportation Service in Sri Lanka. \citep{Fedra2000} also presents the following components as included in a general DSS architecture.
+
+\begin {itemize}
+\item Information resources
+\item The analytical engine
+\item The user interface
+\end {itemize}
+
+Therefore, it is clear that a DSS is the most suitable Information Systems solution for this type of problem. Later on, in Section~\ref{section-Alternatives}, a more thorough justification will be provided for choosing this type of solution.
 
 \newpage
 
 \section{Research Goals \& Objectives}
 \label{section-ResearchGoalsAndObjectives}
 
-\paragraph{ } Of the problems mentioned in Section~\ref{section-ExistingProblems}, implementing a better bus schedule could solve the first 3. The problem of overcrowded buses could also logically be solved through implementing an effective and efficient timetable. Therefore, this research project will focus on finding a solution to these 4 issues as they are the main and most commonly brought up by the commuters.
+\paragraph{ } Of the problems mentioned in Section~\ref{section-ExistingProblems}, implementing a better bus schedule could solve the first 3. The problem of overcrowded buses could also logically be solved through implementing an effective and efficient timetable. Therefore, this research project focuses on finding a solution to these 4 issues as they are the main and most commonly brought up by the commuters.
 
-We can identify the main goal of the research project as the proposition of a new method of scheduling buses in the transport system so that the problems mentioned previously are addressed and minimized or eliminated. This would lead to a more efficient passenger transport service and will improve commuter satisfaction and productivity.
+We can identify the main goal of the research project as the identification of an Information Systems Solution that assists the Schedulers of the Transport Authority while also providing information to the Commuters to help their decision-making process. 
+
+The Schedulers main business process is the formulation of timetables and schedules and thus addressing it is a core requirement. On the other hand, Commuters need to have Information about the Bus Transportation Service on demand so that they can decide which routes to take, which buses to avoid etc. These two parties also need to be connected in the process of Service Feedback so that the Schedulers are provided with an indication of the level of Service provided by the bus operators. This would lead to a more efficient passenger transport service and will improve commuter satisfaction and productivity.
 
 \section{Research Scope \& Limitations}
 \label{section-ResearchScope}
 
-\paragraph{ } The research will focus on improving the scheduling of buses so that it is made more efficient and reliable. The project will focus on the timetabling aspect of the problem of public transit scheduling, as opposed to network planning, vehicle and crew scheduling and rostering. The project will attempt to offer an effective timetabling methodology to address the prevalent issues.
+\paragraph{ } The research focuses on finding a DSS-like solution to solve the problems of timetabling, scheduling and inforamtion availability. Improving the Schedules and providing a method for commuters to give feedback is what the research project strives to achieve. By achieving this, the bus transport service is improved and made more efficient and reliable. 
 
-The research will analyze the past work done on bus and transport scheduling in Sri Lanka as well as in other countries. A new methodology will then be proposed (via headway manipulation) to schedule buses taking into account passenger demand, origin-destination patterns and vehicle location data.
+The research analyzes how a DSS could be applied to the domain of public transportation in a developing nation. The project then attempted to evaluate the hypothesis by testing it on a group of users. Data was collected via a quantitative survey for the Commuters as well as a qualitative analysis for the Bus Schedulers in the Transport Authority.
 
-The research will then attempt to validate the hypothesis by testing it on a bus route in the Western Province. Data will be collected via quantitative surveys and be analyzed to identify if the new strategy can improve the service. Service metrics such as passenger trip times and passenger counts in buses will be used to identify if the proposed strategy can show an improvement in the bus service.
+The data gathering and automated data collection aspects of the schedulers business process is not within the scope of this research. This project assumes that the data is available already and its integrity and validity is intact.
+
+The research also does not attempt to provide or test any hypothesis related to the application of an Expert System-like solution. The project will limit itself to understanding the IS requirements of the domain and attempting to provide a DSS-like solution to the existing problems.
 
 \newpage
 
 \section{Outline of Thesis}
 \label{section-OutlineOfThesis}
 
-Beyond this point, the thesis document will be structured as follows. Chapter 2 will provide a comprehensive review of the literature regarding timetabling, scheduling of buses and optimization of schedules. 
+Beyond this point, the thesis document will be structured as follows. Chapter~\ref{chapter-LitReview} will provide a comprehensive review of the literature regarding the planning process of a typical public transportation system. The Chapter also provides an overview of the literature related to Decision Support Systems and gives the reader a look at the concept of DSSs. The Section will also touch on the history and evolution of the DSS concept. The Chapter ends with a brief look at some Information Systems related to transportation services in a few other developing countries.
 
-Chapter 3 will discuss and propose a methodology for scheduling buses to improve efficiency in the bus service and minimize or eliminate the problems discussed earlier in this chapter. Chapter 4 will provide information on the data gathering techniques used as well as an overview of the data collected.
+Chapter~\ref{chapter-ResearchMethodology} will discuss the research methodology followed in this project. It details the steps taken in the research process and identifies possible alternatives for the research problem. The Chapter will also provide information on a Pilot Route Survey that was conducted to gauge the requirements of the system and the shortcomings of the transportation service.
 
-Chapter 5 will discuss the results of the gathered data and its’ implications vis-\`{a}-vis the method proposed in Chapter 3. Finally in Chapter 6, the conclusions of this research project will be provided and possible future work will be discussed.
+The details of the Proposed Solution will be provided in Chapter~\ref{chapter-ProposedSolution}. the Chapter will detail all the functionality as well as give the reader an overview of the entities in the proposed system. it will end by providing some UI screenshots of the prototype system.
+
+Chapter~\ref{chapter-ResearchEvaluation} will detail the steps taken in the Evaluation phase of the research. the steps taken to evaluate the concept as well as the survey results will be noted in this chapter.
+
+Finally in Chapter~\ref{chapter-ConclusionAndFutureWork}, the conclusions of this research project will be provided and possible future work will be discussed.
 
 \newpage
 
@@ -362,6 +409,7 @@ This literature review looked at the different steps involved in the bus schedul
 \newpage
 
 \section{Decision Support Systems}
+\label {section-DSS}
 
 \paragraph{ } Decision Support Systems are defined as a set of related computer programs and the data required to assist with analysis and decision-making within an organization. They are purposely developed to improve decision making of non-structured management problems. Decision Support Systems utilize data, provide an easy-to-use interface, and allow for the decision maker’s own insights hence being interactive, flexible, and adaptable computer-based information systems \citep{Turban2005}. 
 
@@ -621,6 +669,7 @@ Duration of Trip & & 44 mins & \\
 \newpage
 
 \section{Possible Alternative Solutions}
+\label{section-Alternatives}
 
 \paragraph{} From the contents of the current Chapter, the problems of the current system and transport service are clearly evident. From the Pilot Route Survey that was conducted, the data gathering requirements of the proposed DSS is clear.
 
@@ -735,10 +784,110 @@ The above mentioned entities allow the Schedulers to carry out a route survey an
 
 \end {itemize}
 
+The system is an active project on GitHub. The code repository can be found at, \url{https://github.com/afthaj/Gaman/}
+
 \section{UI Screenshots}
 
-\paragraph{ } 
+\paragraph{} UI Screenshots of the prototype system are displayed below.
 
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{homePage}
+\caption [Screenshot - Home Page] {Screenshot - Home Page}
+\label {image-homePage}
+\end {figure}
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.5]{loginPage}
+\caption [Screenshot - Login Page] {Screenshot - Login Page}
+\label {image-loginPage}
+\end {figure}
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{listRoutes}
+\caption [Screenshot - List of Routes] {Screenshot - List of Routes}
+\label {image-listRoutes}
+\end {figure}
+
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{viewRoute1}
+\caption [Screenshot - View Route 1] {Screenshot - View Route 1}
+\label {image-viewRoute1}
+\end {figure}
+
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{viewRoute2}
+\caption [Screenshot - View Route 2] {Screenshot - View Route 2}
+\label {image-viewRoute2}
+\end {figure}
+
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{listStops}
+\caption [Screenshot - List of Stops] {Screenshot - List of Stops}
+\label {image-listStops}
+\end {figure}
+
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{viewStop1}
+\caption [Screenshot - View Stop 1] {Screenshot - View Stop 1}
+\label {image-viewStop1}
+\end {figure}
+
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{viewStop2}
+\caption [Screenshot - View Stop 2] {Screenshot - View Stop 2}
+\label {image-viewStop2}
+\end {figure}
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{viewStop3}
+\caption [Screenshot - View Stop 3] {Screenshot - View Stop 3}
+\label {image-viewStop3}
+\end {figure}
+
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{viewBus1}
+\caption [Screenshot - View Bus 1] {Screenshot - View Bus 1}
+\label {image-viewBus1}
+\end {figure}
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{viewBus2}
+\caption [Screenshot - View Bus 2] {Screenshot - View Bus 2}
+\label {image-viewBus2}
+\end {figure}
+
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{listComplaints}
+\caption [Screenshot - List of Complaints] {Screenshot - List of Complaints}
+\label {image-listComplaints}
+\end {figure}
+
+\begin {figure} [h!]
+\centering
+\includegraphics[scale=0.2]{addComplaint}
+\caption [Screenshot - Add a Complaint] {Screenshot - Add a Complaint}
+\label {image-addComplaint}
+\end {figure}
 
 \newpage
 
@@ -779,28 +928,248 @@ The Schedulers also pointed out that an implementable system would need some add
 \begin {itemize}
 
 \item Number of Participants: 39
-\item Age group:
+
+\item Age group - Table~\ref{table-survey-ageGroupOfSurveyParticipants}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Age Group & Number of participants \\
+\hline
+20-35	&38 \\
+10-19	&01 \\
+\hline
+\end{tabular}
+\caption{Age Groups of Participants}
+\label{table-survey-ageGroupOfSurveyParticipants}
+\end{table}
+
+\item Frequency of travel in the bus - Table~\ref{table-survey-frequencyOfTravelInTheBus}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Frequency of travel & Number of participants \\
+\hline
+Daily, one or two times a day	&20 \\
+Daily, several times a day	&15 \\
+A few times a week	&03 \\
+A few times a month	&01 \\
+\hline
+\end{tabular}
+\caption{Frequency of travel in the bus}
+\label{table-survey-frequencyOfTravelInTheBus}
+\end{table}
+
+\item Rating - Information Portal (Scale of 1 to 5 with 5 being "Very Useful" and 1 being "Not useful at all") - Table~\ref{table-survey-rating-InformationPortal} - Figure~\ref{image-ratingInformationPortal}
+
+\item Qualitative comments received
 \begin {itemize}
-\item Ages 20-35: 38/39
-\item Ages 10-19: 1/39
+\item "well i think infomation about bus routes is useful if we want to travel to a place that we dnt know using bus routes. most of the time i use google maps to navigate but it doesnt provide me the functionality of which bus route should i take. so i think this is a good effort"
+\item "useful."
+\item "It is a superb move. Very informative and useful. Hope this is mobile friendly as well."
+\item "Very helpful. There are sufficient information regarding buses and bus routes and personals."
+\item "It is great that we can use this system to get information about the buses and owners."
+\item "Really good one"
 \end {itemize}
 
-\item Frequency of travel in the bus:
+\item Rating - Bus Route Finder (Scale of 1 to 5 with 5 being "Very Useful" and 1 being "Not useful at all") - Table~\ref{table-survey-rating-BusRouteFinder} - Figure~\ref{image-ratingBusRouteFinder}
 
+\item Qualitative comments received
 \begin {itemize}
-\item Daily, one or two times a day: 20/39
-\item Daily, several times a day: 15/39
-\item A few times a week: 3/39
-\item A few times a month: 1/39
+\item "simple but effective solution to easily find the routes."
+\item "It's better if the information were presented in a better way, so that those can be found easily (E.g. provide searching facilities etc.)"
+\item "More places need to be added to the system. It's better to give the bus route with the start and end destination as the first details. for some users sometimes giving only route number will not make sense very much."
 \end {itemize}
 
-\item Question - Would you use a system like this if it was implemented?
+\item Rating - Feedback Functionality (Scale of 1 to 5 with 5 being "Very Useful" and 1 being "Not useful at all") - Table~\ref{table-survey-rating-FeedbackFunctionality} - Figure~\ref{image-ratingFeedbackFunctionality}
+
+\item Qualitative comments received
 \begin {itemize}
-\item Yes: 17/39
-\item Oh my god, yes!: 16/39
-\item No: 6/39
+\item "Needs the ability to connect drivers and conductors to buses,feedbacks and complaints. drivers and conducters may get assigned to the buses by a time table component. ( couldn't test this since i couldn't see the needed form elements for filling those info while giving feedback )"
+\item "Feedback to drivers and conductors may not reach them because of the low computer literacy. However, if there is any responsible person to handle or communicate with them then it is really useful function"
 \end {itemize}
 
+\item Rating - Comlaints Functionality (Scale of 1 to 5 with 5 being "Very Useful" and 1 being "Not useful at all") - Table~\ref{table-survey-rating-ComplaintsFunctionality} - Figure~\ref{image-ratingComplaintsFunctionality}
+
+\item Qualitative comments received
+\begin {itemize}
+\item "This is a very useful functionality that would help in increasing and maintaining the quality of the bus services."
+\item "This is really good because sometimes we have to bare all the sh***y experiences or will be able to share it with few friends and forget about those. But this functionality facilitates us to share our good/bad experiences with others and even will be able to do something."
+\item "It's very useful to have such functionality, because that is one of  the main problem we can see in the public transport system in Sri Lanka."
+\item "I wish the complain data were more specific. For example, user might be interested in knowing the bus-route associated with a certain complain or he might be interested viewing all the complains related to a certain but-route."
+\item "If it functioned properly this will have a big impact. Simply a user can share their own experience. But there are possibilities of fake complaints."
+\end {itemize}
+
+\item Rating - User Interface (Scale of 1 to 5 with 5 being "Very easy to use" and 1 being "Very difficult to use") - Table~\ref{table-survey-rating-UserInterface} - Figure~\ref{image-ratingUserInterface}
+
+\item Qualitative comments received
+\begin {itemize}
+\item "good. but can improve. trade off between simplicity and ease of use."
+\item "Simple and nice! good work!"
+\item "Simple, but effective and attractful. Nicely developed."
+\item "Looks a bit too linear in my opinion... more vibrant colours should be used to highlight the important and most frequently used features.."
+\item "I like the simplest interface and colors. Some pages have textboxes whichs seems very small comparing to the screen size. Better if you add some autoresize them"
+\end {itemize}
+
+\item Survey Question - Would you use a system like this if it was implemented? - Table~\ref{table-survey-question-WouldYouUseASystemLikeThis} - Figure~\ref{image-questionWouldYouUse}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Rating & Number of participants \\
+\hline
+5	&09 \\
+4	&20 \\
+3	&07 \\
+2	&03 \\
+1	&00 \\
+\hline
+\end{tabular}
+\caption{Rating - Information Portal}
+\label{table-survey-rating-InformationPortal}
+\end{table}
+
+\begin {figure} [h]
+\centering
+\includegraphics [scale=0.5] {ratingInformationPortal}
+\caption [Chart - Rating - Information Portal] {Chart - Rating - Information Portal}
+\label {image-ratingInformationPortal}
+\end {figure}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Rating & Number of participants \\
+\hline
+5	&12 \\
+4	&16 \\
+3	&09 \\
+2	&02 \\
+1	&01 \\
+\hline
+\end{tabular}
+\caption{Rating - Bus Route Finder}
+\label{table-survey-rating-BusRouteFinder}
+\end{table}
+
+\begin {figure} [h]
+\centering
+\includegraphics [scale=0.5] {ratingBusRouteFinder}
+\caption [Chart - Rating - Bus Route Finder] {Chart - Rating - Bus Route Finder}
+\label {image-ratingBusRouteFinder}
+\end {figure}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Rating & Number of participants \\
+\hline
+5	&09 \\
+4	&14 \\
+3	&13 \\
+2	&03 \\
+1	&00 \\
+\hline
+\end{tabular}
+\caption{Rating - Feedback Functionality}
+\label{table-survey-rating-FeedbackFunctionality}
+\end{table}
+
+\begin {figure} [h]
+\centering
+\includegraphics [scale=0.5] {ratingFeedbackFunctionality}
+\caption [Chart - Rating - Feedback Functionality] {Chart - Rating - Feedback Functionality}
+\label {image-ratingFeedbackFunctionality}
+\end {figure}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Rating & Number of participants \\
+\hline
+5	&08 \\
+4	&16 \\
+3	&10 \\
+2	&05 \\
+1	&00 \\
+\hline
+\end{tabular}
+\caption{Rating - Complaints Functionality}
+\label{table-survey-rating-ComplaintsFunctionality}
+\end{table}
+
+\begin {figure} [h]
+\centering
+\includegraphics [scale=0.5] {ratingComplaintsFunctionality}
+\caption [Chart - Rating - Complaints Functionality] {Chart - Rating - Complaints Functionality}
+\label {image-ratingComplaintsFunctionality}
+\end {figure}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Rating & Number of participants \\
+\hline
+5	&16 \\
+4	&11 \\
+3	&09 \\
+2	&02 \\
+1	&01 \\
+\hline
+\end{tabular}
+\caption{Rating - User Interface}
+\label{table-survey-rating-UserInterface}
+\end{table}
+
+\begin {figure} [h]
+\centering
+\includegraphics [scale=0.5] {ratingUserInterface}
+\caption [Chart - Rating - User Interface] {Chart - Rating - User Interface}
+\label {image-ratingUserInterface}
+\end {figure}
+
+\begin{table} [h]
+\centering
+\begin{tabular}{|l|c|}
+\hline
+Rating & Number of participants \\
+\hline
+Oh my god, yes!	&16 \\
+Yes	&17 \\
+No	&06 \\
+\hline
+\end{tabular}
+\caption{Survey Question - Would you use a system like this if it was implemented?}
+\label{table-survey-question-WouldYouUseASystemLikeThis}
+\end{table}
+
+\begin {figure} [h]
+\centering
+\includegraphics [scale=0.5] {questionWouldYouUse}
+\caption [Chart - Survey Question] {Chart - Survey Question}
+\label {image-questionWouldYouUse}
+\end {figure}
+
+\end {itemize}
+
+\newpage
+
+\section{Literature Published related to this Research Project}
+
+\paragraph{} A research paper on the work related to this research project was submitted to the 2013 European, Mediterranean \& Middlle-eastern Conference on Information Systems (EMCIS). The paper was accepted subject to changes. The paper was an analysis of trasnportation systems in developing countries and how an Information Systems solution would help solve the problems faced in the public transportation domain. The details of the paper are listed below.
+
+\begin {itemize}
+\item Title: "A Transportation Management Information System for Public Transport in Developing Countries."
+\item Authors: Jaldin, Aftha and Arunatileka, Dr. Shiromi.
+\item Abstract: Public Transportation Management in developing countries presents a more challenging environment than its counterpart in developed nations. And, as in any Public Transport System, the Scheduling Process provides the framework in which the Transport Service operates. It is responsible for the formulation of timetables, vehicle and crew scheduling, and crew rostering. Although this is the most important part of the transport system, it is the most difficult to manage. The varied inputs to the process, the lack of proper infrastructure and improper technology and processes available all lead to a unique problem in terms of Public Transportation Management in a developing country. Therefore it is imperative for a system to cater to these limitations and meet the demands of a developing country specifically. Therefore, this paper proposes an alternative system to aid the Schedulers in their capacity to formulate timetables and schedule vehicles and crew. The system will also act as an information portal to commuters to obtain information about transport modes and associated routes as well as other related information. The paper uses the case of the Western Province Bus Transportation System in Sri Lanka as an example to draw conclusions regarding the proposed information system.
 \end {itemize}
 
 
@@ -824,13 +1193,22 @@ The main outcome of this research project was to identify and analyze the proble
 
 \paragraph{} The research of investigating the usage of a DSS in the context of a public transportation system in a developing country was in and of itself a challenge. Furthermore, this research can be extended in breadth to include an Automated Data Gathering Mechanism. The Data Collection framework and infrastructure was not within the scope of this research project. However, in the future, the methods of integrating a system of Automated Data Collection into this concept could be investigated. This includes an Automated Vehicle Location system as well as an Automated Passenger Counting mechanism. it could also investigate the possible options for an Automated Fare Collection framework and infrastructure. Possible options for the last point would be using mobile SMS-based payments and/or using new technologies such as NFC (Near-Field Communication) to implement a Contactless Smart Card system to reduce revenue leakage.
 
-Additionally, the concept of the system presented in this research project could be extended to become an Expert System. An Expert System differs from a Decision Support System in that it not only provides the information to help the decision-making process but also provides several recommendations automatically by analyzing the data and identifying key points in the information.
+Additionally, the concept of the system presented in this research project could be extended to become an Expert System. An Expert System differs from a Decision Support System in that it not only provides the information to help the decision-making process but also provides several recommendations automatically by analyzing the data and identifying key points in the information. An Expert System is defined as a computer system that emulates the decision-making ability of a human expert. Expert systems are designed to solve complex problems by reasoning about knowledge, like an expert \citep{Jackson1998}.
 
 This research project could also be extended by researching the various methods of bus dispatching and providing options for the schedulers to switch between various dispatching methods for each Bus Route or a set of Bus Routes.
 
-The possible extensions to this research have been illustrated in Figure().
+The possible extensions to this research have been illustrated in Figure~\ref{image-futureWork}.
 
-% insert figure!!!
+\begin {figure} [h]
+\centering
+\includegraphics [scale=0.5] {futureWork}
+\caption [Future Work and possible Expansion of Concept] {Future Work and possible Expansion of Concept}
+\label {image-futureWork}
+\end {figure}
+
+\subsection{Localization to include Sinhala and Tamil Languages}
+
+\paragraph{} Additionally, the system could be localized to improve usability by the Users. The DSS could be offered in Sinhala and Tamil languages so that people who have difficulty perusing the English web application could use the interface with the language that they are most comfortable with.
 
 \newpage
 
