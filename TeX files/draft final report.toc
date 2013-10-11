@@ -68,18 +68,23 @@
 \contentsline {paragraph}{}{45}
 \contentsline {section}{\numberline {4.2}System Features}{46}
 \contentsline {paragraph}{ }{46}
-\contentsline {section}{\numberline {4.3}UI Screenshots}{47}
-\contentsline {paragraph}{ }{47}
-\contentsline {chapter}{\numberline {5}Research Evaluation}{48}
-\contentsline {paragraph}{}{48}
-\contentsline {section}{\numberline {5.1}User Evaluation of Prototype}{48}
-\contentsline {paragraph}{}{48}
-\contentsline {paragraph}{}{48}
-\contentsline {subsection}{\numberline {5.1.1}Feedback of the Schedulers}{49}
+\contentsline {section}{\numberline {4.3}URL of prototype system}{47}
+\contentsline {paragraph}{}{47}
+\contentsline {section}{\numberline {4.4}UI Screenshots}{48}
+\contentsline {paragraph}{ }{48}
+\contentsline {chapter}{\numberline {5}Research Evaluation}{49}
 \contentsline {paragraph}{}{49}
-\contentsline {subsection}{\numberline {5.1.2}Feedback of the Commuters}{49}
+\contentsline {section}{\numberline {5.1}User Evaluation of Prototype}{49}
 \contentsline {paragraph}{}{49}
-\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{50}
+\contentsline {paragraph}{}{49}
+\contentsline {subsection}{\numberline {5.1.1}Feedback of the Schedulers}{50}
 \contentsline {paragraph}{}{50}
-\contentsline {chapter}{\numberline {A}Complete Set of Gathered Data}{51}
-\contentsline {paragraph}{ }{51}
+\contentsline {subsection}{\numberline {5.1.2}Feedback of the Commuters}{50}
+\contentsline {paragraph}{}{50}
+\contentsline {chapter}{\numberline {6}Conclusion and Future Work}{51}
+\contentsline {section}{\numberline {6.1}Conclusion}{51}
+\contentsline {paragraph}{}{51}
+\contentsline {section}{\numberline {6.2}Future Work}{51}
+\contentsline {paragraph}{}{51}
+\contentsline {chapter}{\numberline {A}Complete Set of Gathered Data}{53}
+\contentsline {paragraph}{ }{53}
